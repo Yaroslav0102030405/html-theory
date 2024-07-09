@@ -8,4 +8,16 @@
 2
 1. Доступності в вебе є аріа атрібути aria-label="Ссилка на facebook" використовується для кнопок и ссилок іконок соціальних мереж де є тільки іконка і не має ніякого описання. <br />
 2. Unicode Спецсимволі, яких не має на клавыатуры ставяться мнемокодамі або символьними подстановками <br />
-https://html.spec.whatwg.org/multipage/named-characters.html https://www.toptal.com/designers/htmlarrows/symbols/
+https://html.spec.whatwg.org/multipage/named-characters.html https://www.toptal.com/designers/htmlarrows/symbols/ <br />
+
+3
+1. CSS-зміни  <br />
+:root {  <br />
+--title-text-color: black,  <br />
+--description-text-color: gray,  <br />
+--accent-color: red,  <br />
+}  <br />
+
+.title {  <br />
+backround-color: var(--title-text--color)  <br />
+}
