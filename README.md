@@ -21,3 +21,10 @@ https://html.spec.whatwg.org/multipage/named-characters.html https://www.toptal.
 .title {  <br />
 backround-color: var(--title-text--color)  <br />
 }
+
+4
+Кнопці треба задати fotn-family: inherit (наслідувати) тому що кнопка  не успадкує фонт фемелі
+font-size: 16px і line-height: 18px треба розділити 18/16 = 1.2 і записати в line-height: 1.2
+Заходимо на сайт google-fonts та обираємо шрифт і потім підключаємо його в html файлі перед CSS стилями
+System Font Stack https://systemfontstack.com/ 
+CSS system fonts cheatsheet https://devhints.io/css-system-font-stack
