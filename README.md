@@ -47,4 +47,52 @@ line-height: 1.67 <br />
 Динамика <br />
 бекграйнд цвет <br />
 анімації <br />
-}
+} <br />
+
+5 <br />
+Глобальний border-box <br />
+html { <br />
+box-sizing: border-box <br />
+} <br />
+
+*, <br />
+*::before, <br />
+*::after { <br />
+box-sizing: inherit <br />
+} <br />
+
+Силкам а треба задати display: inline-block <br />
+
+
+<div class="container"></div> <br />
+css <br />
+.container { <br />
+width: 1200px <br />
+pading-left: 15px <br />
+pading-right: 15px <br />
+margin: 0 auto <br />
+} <br />
+
+body { <br />
+margin: 0 <br />
+} <br />
+
+.list { <br />
+padding 0 <br />
+margin 0 <br />
+list-style none <br />
+} <br />
+
+h1, h2, h3, h4, h5, h6 { <br />
+margin-top 0 <br />
+margin-bottom 0 <br />
+} <br />
+
+.section { <br />
+padding-top 120px <br />
+padding-bottom 120px <br />
+} <br />
+
+У нас є різни брайзери... і в них різні таблиці стилів <br />
+Тому щоб привести базові стилі різних брайзеров до єдиного стилю треба підключити модерн-нормалайз https://www.npmjs.com/package/modern-normalize <br />
+перед всіма стилями css
