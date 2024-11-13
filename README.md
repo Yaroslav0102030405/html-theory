@@ -96,3 +96,7 @@ padding-bottom 120px <br />
 У нас є різни брайзери... і в них різні таблиці стилів <br />
 Тому щоб привести базові стилі різних брайзеров до єдиного стилю треба підключити модерн-нормалайз https://www.npmjs.com/package/modern-normalize <br />
 перед всіма стилями css
+
+Слова, часто используемые в CSS-классах
+https://blog.ithillel.ua/ru/articles/words-commonly-used-in-css-classes
+https://github.com/yoksel/common-words
