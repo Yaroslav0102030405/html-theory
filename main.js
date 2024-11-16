@@ -133,33 +133,90 @@ console.log(b);
 
 // 1
 
-const string5 = '100';
-const numberString = Number(string5);
-console.log(numberString);
+// const string5 = '100';
+// const numberString = Number(string5);
+// console.log(numberString);
 
-const elementWidth = '50px';
-const numberElementWidth = Number.parseInt(elementWidth);
-console.log(numberElementWidth);
+// const elementWidth = '50px';
+// const numberElementWidth = Number.parseInt(elementWidth);
+// console.log(numberElementWidth);
 
-const elementHeight = '10.12px';
-const numberElementHeight = Number.parseFloat(elementHeight);
-console.log(numberElementHeight);
+// const elementHeight = '10.12px';
+// const numberElementHeight = Number.parseFloat(elementHeight);
+// console.log(numberElementHeight);
 
-const salary5 = 130.12344;
-const numberSalary = Number(salary5.toFixed(2));
-console.log(numberSalary);
+// const salary5 = 130.12344;
+// const numberSalary = Number(salary5.toFixed(2));
+// console.log(numberSalary);
 
-let base = prompt('Давай число');
-base = Number(base);
-console.log(base);
+// let base = prompt('Давай число');
+// base = Number(base);
+// console.log(base);
 
-if (!base) {
-  alert('Это строка пожалуйста введите число');
+// if (!base) {
+//   alert('Это строка пожалуйста введите число');
+// }
+
+// let power = prompt('Давай степень');
+// power = Number(power);
+// console.log(power);
+
+// const result5 = base ** power;
+// alert(result5);
+
+// дізнатися дліну
+const message5 = 'В этой строке 26 символов.';
+const res = message.length;
+console.log(res);
+
+// Конкатенація строк
+const firstName5 = 'Yaroslav';
+const lastName5 = 'Lukovetskyi';
+const fullName5 = firstName + lastName;
+console.log(fullName5);
+
+// Шаблоні строки
+const quantity5 = 30;
+const orderMsg5 = `Ви замовили ${quantity5} холодильників`;
+console.log(orderMsg5);
+
+// Нормалізація ввода
+const brand5 = 'Samsung';
+const normalizedBrand5 = brand5.toUpperCase();
+console.log(normalizedBrand5);
+
+const normalizedBrand6 = brand5.toLowerCase();
+console.log(normalizedBrand6);
+
+const copyBrand5 = brand5.slice(1).toUpperCase();
+console.log(copyBrand5);
+
+const spanString = 'акція';
+const string5 = 'Привіт це акція';
+const res6 = string5.includes(spanString);
+if (res6) {
+  console.log(`Такое слово ${spanString} найдено`);
+}
+console.log(res6);
+
+// Тернарний оператор
+const balance7 = 1000;
+const message7 = balance7 >= 0 ? 'Позитивний баланс' : 'Негативний баланс';
+console.log(message7);
+
+// switch
+const option = 3;
+let message8 = '';
+
+switch (option) {
+  case 1:
+    message8 = 'Ви можете забрати товар завтра з 12:00 в нашем офісе';
+    break;
+  case 2:
+    message8 = 'Курьер доставіт замовлення завтра с 9:00 до 18:00';
+    break;
+  default:
+    message8 = 'Вам зателефонує менеджер';
 }
 
-let power = prompt('Давай степень');
-power = Number(power);
-console.log(power);
-
-const result5 = base ** power;
-alert(result5);
+console.log(message8);
