@@ -1,4 +1,4 @@
-// Робота з числами
+// Методи для чисел
 // Констурктор Number() який повертає число або NaN
 const num0 = '5';
 const copyNum0 = Number(num0);
@@ -130,3 +130,36 @@ if (true) {
 }
 
 console.log(b);
+
+// 1
+
+const string5 = '100';
+const numberString = Number(string5);
+console.log(numberString);
+
+const elementWidth = '50px';
+const numberElementWidth = Number.parseInt(elementWidth);
+console.log(numberElementWidth);
+
+const elementHeight = '10.12px';
+const numberElementHeight = Number.parseFloat(elementHeight);
+console.log(numberElementHeight);
+
+const salary5 = 130.12344;
+const numberSalary = Number(salary5.toFixed(2));
+console.log(numberSalary);
+
+let base = prompt('Давай число');
+base = Number(base);
+console.log(base);
+
+if (!base) {
+  alert('Это строка пожалуйста введите число');
+}
+
+let power = prompt('Давай степень');
+power = Number(power);
+console.log(power);
+
+const result5 = base ** power;
+alert(result5);
