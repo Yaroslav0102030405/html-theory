@@ -220,3 +220,75 @@ switch (option) {
 }
 
 console.log(message8);
+
+// масив - це колекція список однотипних елементів
+const friends = ['Mango', 'Kiwi', 'Rich'];
+console.log(friends);
+// Всі методи масиву лежать в прототипі. Можна ідкрити консоль и подивитися на їх
+// Масив починається з нуля
+// Елементи масиву розділяється комою
+
+// звернутися к елементу масиву
+console.log(friends[0]);
+
+// перезаписати значення
+console.log((friends[0] = 'Tango'));
+
+// перебрати масив
+for (const friend of friends) {
+  console.log(friend);
+}
+
+const num5 = [1, 2, 3, 4, 5];
+let total = 0;
+
+// for (let i = 0; i < num5.length; i += 1) {
+//   total += num5[i];
+// }
+// console.log(total);
+// for (const num of num5) {
+//   total += num;
+// }
+// console.log(total);
+
+// for (const num of num5) {
+//   if (num % 2 !== 0) total += num;
+// }
+// console.log(total);
+
+const logins = ['mks', 'art', 'css'];
+const loginToFind = 'art';
+// let mes = `Пользователь ${loginToFind} не найден`;
+
+// for (const login of logins) {
+
+//   if (login !== loginToFind) {
+//     mes = `Найден ${loginToFind}`;
+//     break;
+//   }
+
+// }
+
+// console.log(mes);
+const mes = logins.includes(loginToFind)
+  ? `Пользователь ${loginToFind} найден`
+  : `Пользователь ${loginToFind} не найден`;
+
+console.log(mes);
+
+console.log(logins.slice());
+
+// функція
+const num8 = [1, 2, 3, 4, 5, 6, 7];
+
+const calculateTotal = function (items) {
+  let total = 0;
+
+  for (const item of items) {
+    total += item;
+  }
+
+  return total;
+};
+
+console.log(calculateTotal(num8));
