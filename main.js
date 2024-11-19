@@ -292,3 +292,84 @@ const calculateTotal = function (items) {
 };
 
 console.log(calculateTotal(num8));
+
+// Обьекты
+const playlist = {
+  name: 'Мой плейлист',
+  rating: 5,
+  tracks: ['трек-1', 'трек-2', 'трек-3'],
+  trackCount: 3,
+
+  changeName(newName) {
+    this.name = newName;
+  },
+  addTrack(track) {
+    this.tracks.push(track);
+    // this.trackCount = this.tracks.length;
+  },
+  getTrackCount() {
+    return this.tracks.length;
+  },
+};
+playlist.changeName('Новое имя');
+playlist.addTrack('Новый трек-4');
+
+console.log(playlist);
+
+const propertyName = 'tracks';
+
+console.log(playlist[propertyName]);
+
+// Обратиться к свойству
+console.log(playlist.name);
+
+// Динамическое вычесление
+const inputName = 'color';
+const inputValue = 'tomato';
+
+const colorPickerData = {
+  [inputName]: inputValue,
+};
+
+console.log(colorPickerData);
+
+// перебрать обьект
+const feedback = {
+  good: 5,
+  neutral: 10,
+  bad: 3,
+};
+
+const keys = Object.keys(feedback);
+console.log(keys);
+let total9 = 0;
+
+const values = Object.values(feedback);
+console.log(values);
+
+for (const value of values) {
+  total9 += value;
+}
+console.log(total9);
+
+// все во фронтенде это массив обьектов
+const friends9 = [
+  { name: 'Mango', onkine: false },
+  { name: 'Kiwi', onkine: true },
+];
+
+for (const friends of friends9) {
+  console.log(friends);
+}
+
+// console.log(friends9);
+const findFriendByName = function (allFriends, friendName) {
+  for (const allFriend of allFriends) {
+    if (allFriend.name === friendName) {
+      return `Мы нашли ${friendName}`;
+    }
+  }
+  return `Не нашли ${friendName}`;
+};
+
+console.log(findFriendByName(friends9, 'Kiwi'));
