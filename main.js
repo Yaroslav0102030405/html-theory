@@ -1,4 +1,5 @@
 // Методи для чисел
+
 // Констурктор Number() який повертає число або NaN
 const num0 = '5';
 const copyNum0 = Number(num0);
@@ -354,8 +355,8 @@ console.log(total9);
 
 // все во фронтенде это массив обьектов
 const friends9 = [
-  { name: 'Mango', onkine: false },
-  { name: 'Kiwi', onkine: true },
+  { name: 'Mango', online: false },
+  { name: 'Kiwi', online: true },
 ];
 
 for (const friends of friends9) {
@@ -363,13 +364,162 @@ for (const friends of friends9) {
 }
 
 // console.log(friends9);
-const findFriendByName = function (allFriends, friendName) {
-  for (const allFriend of allFriends) {
-    if (allFriend.name === friendName) {
-      return `Мы нашли ${friendName}`;
-    }
-  }
-  return `Не нашли ${friendName}`;
+// const findFriendByName = function (allFriends, friendName) {
+//   for (const allFriend of allFriends) {
+//     if (allFriend.name === friendName) {
+//       return `Мы нашли ${friendName}`;
+//     }
+//   }
+//   return `Не нашли ${friendName}`;
+// };
+
+// console.log(findFriendByName(friends9, 'Kiwi'));
+
+// const getAllName = function (items) {
+//   const names = [];
+
+//   for (const item of items) {
+//     console.log(item.name);
+
+//     names.push(item.name);
+//   }
+
+//   return names;
+// };
+
+// console.log(getAllName(friends9));
+
+// const getOnlineFriends = function (allFriends) {
+//   const onlineFriends = [];
+
+//   for (const friend of allFriends) {
+//     if (!friend.online) {
+//       onlineFriends.push(friend.name);
+//     }
+//   }
+
+//   return onlineFriends;
+// };
+
+// console.log(getOnlineFriends(friends9));
+
+// const getFriendsByOnlineStatus = function (allFriends) {
+//   const status = {
+//     online: [],
+//     offline: [],
+//   };
+
+//   for (const friend of allFriends) {
+//     if (friend.online) {
+//       status.online.push(friend);
+//       continue;
+//     }
+//     status.offline.push(friend);
+//   }
+
+//   return status;
+// };
+
+// console.log(getFriendsByOnlineStatus(friends9));
+
+// Распыление обьектов
+const a = { x: 1, y: 2 };
+const bb = { x: 0, z: 4 };
+
+const c = { name: 'Turbo', ...a, ...bb, service: 'Good' };
+console.log(c);
+
+const defaultSettings = {
+  theme: 'light',
+  showNotification: true,
 };
 
-console.log(findFriendByName(friends9, 'Kiwi'));
+const usertSettings = {
+  theme: 'black',
+  showNotification: true,
+};
+
+const finalSettings = {
+  ...defaultSettings,
+  ...usertSettings,
+};
+
+console.log(finalSettings);
+
+const feedback2 = {
+  good: 5,
+  neutral: 10,
+  bad: 3,
+};
+const { good, bad } = feedback2;
+
+console.log(good, bad);
+
+const add = (...args) => {
+  let total = 0;
+  for (const arg of args) {
+    total += arg;
+  }
+  return total;
+};
+
+console.log(add(2, 8, 2, 3, 4, 5, 15));
+
+const user = {
+  tag: 'Mango',
+  showTag() {
+    console.log(this);
+  },
+};
+
+user.showTag();
+
+// Обьявили функцию
+const showTag = function () {
+  console.log(this);
+  console.log(this.tag);
+};
+
+// создали обьект
+const user2 = {
+  tag: 'Mango',
+};
+
+// добавили новое свойство функцию
+user2.showUserTag = showTag;
+// вызвали обьект
+user2.showUserTag();
+
+const showThis = function () {
+  console.log(this);
+};
+
+// showThis();
+
+const objA = {
+  a: 1,
+  b: 2,
+};
+
+// метод колл  и аплайн один раз привязывает контекст и сразу вызывает эту функцию
+// привязывает к функции контекст
+showThis.call(objA);
+showThis.apply(objA);
+
+// байн делает копию функции с привязанным контектсвом которую можны вызватт потом
+const changeColor = function (color) {
+  console.log(this);
+  this.color = color;
+};
+
+const hat = {
+  color: 'black',
+};
+
+const sweater = {
+  color: 'green',
+};
+
+const changeHatColor = changeColor.bind(hat);
+changeHatColor('yellow');
+console.log(hat);
