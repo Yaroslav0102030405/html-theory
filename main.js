@@ -523,3 +523,57 @@ const sweater = {
 const changeHatColor = changeColor.bind(hat);
 changeHatColor('yellow');
 console.log(hat);
+
+class Car1 {
+  // метод класса
+  constructor() {}
+}
+console.dir(Car1);
+const carInstance = new Car1();
+console.log(carInstance);
+
+//  Методы массивов
+const numbers = [1, 2, 3, 4, 5];
+
+// современная замена метода for
+// number.forEach((number) => {
+//   console.log(number);
+// });
+
+// метод map
+// имутабильность в разработке когда мы не хотим изменять оригинальные данные а создать новые данные на их основе
+// const doubleNumders = numbers.map((number) => {
+//   console.log(number);
+
+//   return number * 2;
+// });
+
+// console.log(doubleNumders);
+
+const players = [
+  { id: '1', name: 'Mango', time: 10, points: 24, online: true },
+  { id: '1', name: 'Poly', time: 20, points: 34, online: false },
+  { id: '1', name: 'Kiwi', time: 30, points: 44, online: true },
+  { id: '1', name: 'Ajax', time: 40, points: 54, online: false },
+];
+
+// вернуть одно значение
+const playersNames = players.map((player) => player.name);
+console.log(playersNames);
+
+// вернуть два и больше значения
+// const res1 = players.map((player) => {
+//   return {
+//     name: player.name,
+//     time: player.time,
+//   };
+// });
+
+// const res1 = players.map(({ name, time }) => ({ name, time }));
+// console.log(res1);
+
+// метод map используеться дл яобновления данных
+const updatePlayers = players.map((player) => {
+  return { ...player, points: player.points * 2 };
+});
+console.log(updatePlayers);
