@@ -552,9 +552,9 @@ const numbers = [1, 2, 3, 4, 5];
 
 const players = [
   { id: '1', name: 'Mango', time: 10, points: 24, online: true },
-  { id: '1', name: 'Poly', time: 20, points: 34, online: false },
-  { id: '1', name: 'Kiwi', time: 30, points: 44, online: true },
-  { id: '1', name: 'Ajax', time: 40, points: 54, online: false },
+  { id: '2', name: 'Poly', time: 20, points: 34, online: false },
+  { id: '3', name: 'Kiwi', time: 30, points: 44, online: true },
+  { id: '4', name: 'Ajax', time: 40, points: 54, online: false },
 ];
 
 // вернуть одно значение
@@ -572,8 +572,24 @@ console.log(playersNames);
 // const res1 = players.map(({ name, time }) => ({ name, time }));
 // console.log(res1);
 
-// метод map используеться дл яобновления данных
+// метод map используеться дл обновления данных
+// const updatePlayers = players.map((player) => {
+//   return { ...player, points: player.points * 2 };
+// });
+// console.log(updatePlayers);
+
+// когда нужно обновить данные 1 игрока
+const playerId = '3';
+
 const updatePlayers = players.map((player) => {
-  return { ...player, points: player.points * 2 };
+  console.log(player.id);
+  if (playerId === player.id) {
+    return {
+      ...player,
+      time: player.time + 500,
+      name: (player.name = 'AAAAA'),
+    };
+  }
+  return player;
 });
 console.log(updatePlayers);
