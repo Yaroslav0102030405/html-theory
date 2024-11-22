@@ -551,7 +551,7 @@ const numbers = [1, 2, 3, 4, 5];
 // console.log(doubleNumders);
 
 const players = [
-  { id: '1', name: 'Mango', time: 10, points: 24, online: true },
+  { id: '1', name: 'Mango', time: 100, points: 24, online: true },
   { id: '2', name: 'Poly', time: 20, points: 34, online: false },
   { id: '3', name: 'Kiwi', time: 30, points: 44, online: true },
   { id: '4', name: 'Ajax', time: 40, points: 54, online: false },
@@ -579,17 +579,78 @@ console.log(playersNames);
 // console.log(updatePlayers);
 
 // когда нужно обновить данные 1 игрока
-const playerId = '3';
+// const playerId = '3';
 
-const updatePlayers = players.map((player) => {
-  console.log(player.id);
-  if (playerId === player.id) {
-    return {
-      ...player,
-      time: player.time + 500,
-      name: (player.name = 'AAAAA'),
-    };
-  }
-  return player;
-});
-console.log(updatePlayers);
+// const updatePlayers = players.map((player) => {
+//   console.log(player.id);
+//   if (playerId === player.id) {
+//     return {
+//       ...player,
+//       time: player.time + 500,
+//       name: (player.name = 'AAAAA'),
+//     };
+//   }
+//   return player;
+// });
+// console.log(updatePlayers);
+
+const mango = 'Poly';
+
+// const filtered = players.filter((player) => {
+//   if (mango === player.name) {
+//     return player.name;
+//   }
+//   return 'Поки такої людини не має у списку';
+// });
+// console.log(filtered);
+
+// const filtered1 = players.filter((player) => player.time > 10);
+// console.log(filtered1);
+
+const playerName = (all, name) => {
+  return all.find((al) => al.name === mango);
+};
+
+console.log(playerName(players, mango));
+
+const number8 = [10, 20, 30, 40, 50];
+
+const total1 = number8.reduce((acc, num) => acc + num, 0);
+console.log(total1);
+
+const salary12 = {
+  m: 20,
+  s: 30,
+  t: 50,
+};
+
+const totalSalary = Object.values(salary12).reduce(
+  (total, num) => total + num,
+  0
+);
+console.log(totalSalary);
+
+const totalTimePlayers = players.reduce(
+  (totalTime, player) => totalTime + player.time,
+  0
+);
+console.log(totalTimePlayers);
+
+const carts = [
+  {
+    label: 'Aplle',
+    price: 30,
+    quantity: 2,
+  },
+  {
+    label: 'Poly',
+    price: 10,
+    quantity: 2,
+  },
+];
+
+const totalCart = carts.reduce(
+  (total, cart) => total + cart.price * cart.quantity,
+  0
+);
+console.log(totalCart);
