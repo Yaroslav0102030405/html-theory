@@ -654,3 +654,24 @@ const totalCart = carts.reduce(
   0
 );
 console.log(totalCart);
+
+const number11 = [1, 2, 3, 4, 5];
+
+const sortNumbers = [...number11].sort((a, b) => a - b);
+console.log(sortNumbers);
+
+const data = [{ name: 'Aango' }, { name: 'Bango' }, { name: 'Cango' }];
+
+const sortedData = [...data].sort((a, b) => {
+  const result = a.name[0] > b.name[0];
+
+  if (result) {
+    return 1;
+  }
+  // if (!result) {
+  //   return -1;
+  // }
+  return -1;
+});
+
+console.log(sortedData);
