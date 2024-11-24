@@ -675,3 +675,57 @@ const sortedData = [...data].sort((a, b) => {
 });
 
 console.log(sortedData);
+
+const itemRef = document.querySelector('li');
+// itemRef.classList.add('super');
+
+// if (itemRef.classList.contains('super')) {
+//   itemRef.classList.replace('super', 'cool');
+// }
+
+console.log(itemRef);
+
+const color1 = [
+  { label: 'red', color: '#F44336' },
+  { label: 'red', color: '#4CAF50' },
+];
+
+const waperRef = document.querySelector('.waper');
+
+const makeColor = (options) => {
+  return options.map((option) => {
+    const buttonRef = document.createElement('button');
+    buttonRef.type = 'button';
+    buttonRef.classList.add('btn');
+    buttonRef.textContent = option.label;
+    buttonRef.style.backgroundColor = option.color;
+
+    return buttonRef;
+  });
+};
+
+const elements2 = makeColor(color1);
+waperRef.append(...elements2);
+
+import transationsHistory from './data.js';
+// console.log(transationsHistory);
+
+const makeTransationsHistoryMurkup = (transations) => {
+  const { id, amout, date, bisiness, type, name, account } = transations;
+  return `
+   <tr>
+          <td>${id}</td>
+          <td>${amout}</td>
+          <td>${date}</td>
+          <td>${bisiness}</td>
+          <td>${type}</td>
+          <td>${name}</td>
+          <td>${account}</td>
+        </tr>`;
+};
+
+const tableRef = document.querySelector('.table');
+const makeRows = transationsHistory.map(makeTransationsHistoryMurkup).join('');
+
+tableRef.insertAdjacentHTML('beforeend', makeRows);
+console.log(makeRows);
