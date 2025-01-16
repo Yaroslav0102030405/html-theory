@@ -729,3 +729,23 @@ const makeRows = transationsHistory.map(makeTransationsHistoryMurkup).join('');
 
 tableRef.insertAdjacentHTML('beforeend', makeRows);
 console.log(makeRows);
+
+const htmlEl = document.querySelector('html');
+const buttonEl = document.querySelector('.js-container');
+
+buttonEl.addEventListener('click', onClickButton);
+
+function onClickButton(e) {
+  console.log(e.target.textContent);
+  if (e.target.textContent === 'UA') {
+    htmlEl.setAttribute('lang', 'ua');
+    console.log('Ghbdtn');
+  } else if (e.target.textContent === 'EN') {
+    htmlEl.setAttribute('lang', 'ru');
+  }
+  return;
+}
+
+console.log(htmlEl.lang);
+
+// onClickButton();
