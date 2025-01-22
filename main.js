@@ -21,17 +21,17 @@ const copyNum3 = Number(num3.toFixed(2));
 console.log(copyNum3);
 
 // Масив
-const colors = ['red', 'green', 'blue'];
-// Індекс останього числа
-const max = colors.length - 1;
-const min = 0;
-// Математична операція яка повертає з масиву випадковий індекс
-const index = Math.round(Math.random() * (max - min) + min);
-// індекс перетворюємо на колір
-const color = colors[index];
-console.log(color);
-// Звертаємося до DOM та на боді додаємо випадковий колір фону
-document.body.style.backgroundColor = color;
+// const colors = ['red', 'green', 'blue'];
+// // Індекс останього числа
+// const max = colors.length - 1;
+// const min = 0;
+// // Математична операція яка повертає з масиву випадковий індекс
+// const index = Math.round(Math.random() * (max - min) + min);
+// // індекс перетворюємо на колір
+// const color = colors[index];
+// console.log(color);
+// // Звертаємося до DOM та на боді додаємо випадковий колір фону
+// document.body.style.backgroundColor = color;
 
 // Строки
 // Дізнатися довжину

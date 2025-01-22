@@ -45,3 +45,51 @@ td {
 td:hover {
   background-color: rgb(27, 122, 166);
 }
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-item {
+  position: relative;
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: wheat;
+}
+
+.menu-item:hover {
+  background-color: blueviolet;
+}
+
+.menu-item:hover .submenu {
+  /* display: block; */
+  opacity: 1;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  /* display: none; */
+  border: 1px solid black;
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.submenu li {
+  padding: 10px 20px;
+}
+
+/* .submenu li:hover {
+  background-color: brown;
+} */
+
+.submenu li:hover a {
+  color: red;
+}
