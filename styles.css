@@ -93,3 +93,53 @@ a {
 .submenu li:hover a {
   color: red;
 }
+
+.menu__btn {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__btn {
+    display: none;
+  }
+}
+
+.menu__btn .close {
+  display: none;
+}
+
+.menu__btn.is-open .close {
+  display: block;
+}
+
+.menu__btn.is-open .menu {
+  display: none;
+}
+
+.mobile__m {
+  display: none;
+  background-color: aqua;
+}
+
+.mobile__m.is-open {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile__m {
+    display: none;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}

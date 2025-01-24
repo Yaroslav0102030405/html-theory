@@ -749,3 +749,13 @@ function onClickButton(e) {
 console.log(htmlEl.lang);
 
 // onClickButton();
+
+const btnf = document.querySelector('.menu__btn');
+const menuicon = document.querySelector('.mobile__m');
+
+btnf.addEventListener('click', onClick);
+
+function onClick() {
+  btnf.classList.toggle('is-open');
+  menuicon.classList.toggle('is-open');
+}
