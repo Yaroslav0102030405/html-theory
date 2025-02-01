@@ -117,3 +117,41 @@ console.log(message3);
 // тернарний оператор
 const message4 = balance >= 1000 ? 'Позитивний' : 'Негативний';
 console.log(message4);
+
+// lesson 2 ----------------------
+const star = 5;
+let price;
+let message6;
+
+switch (star) {
+  case 1:
+    price = 'Ціна: 20.00$ за одну добу';
+    message6 = `'Ви обрали готель з ${star} зіркою'`;
+    break;
+
+  case 2:
+    price = 'Ціна: 30.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  case 3:
+    price = 'Ціна: 50.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  case 4:
+    price = 'Ціна: 70.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  case 5:
+    price = 'Ціна: 120.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  default:
+    console.log(`Такої готелю у якого ${star} зірок у нас не має`);
+}
+
+console.log(message6);
+console.log(price);
