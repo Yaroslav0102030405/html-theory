@@ -228,3 +228,12 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 3
+const friends = [];
+friends.push('Mango');
+friends.push('Kiwi');
+friends.unshift('Aaa');
+friends.pop();
+console.log(friends);
+console.log(friends.length - 1);
