@@ -117,3 +117,114 @@ console.log(message3);
 // тернарний оператор
 const message4 = balance >= 1000 ? 'Позитивний' : 'Негативний';
 console.log(message4);
+
+// lesson 2 ----------------------
+const star = 5;
+let price;
+let message6;
+
+switch (star) {
+  case 1:
+    price = 'Ціна: 20.00$ за одну добу';
+    message6 = `'Ви обрали готель з ${star} зіркою'`;
+    break;
+
+  case 2:
+    price = 'Ціна: 30.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  case 3:
+    price = 'Ціна: 50.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  case 4:
+    price = 'Ціна: 70.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  case 5:
+    price = 'Ціна: 120.00$ за одну добу';
+    message6 = `Ви обрали готель з зіркою ${star}`;
+    break;
+
+  default:
+    console.log(`Такої готелю у якого ${star} зірок у нас не має`);
+}
+
+console.log(message6);
+console.log(price);
+
+// Задача 2
+const minSalary = 500;
+const maxSalary = 5000;
+const employeers = 3;
+let totalSalary = 0;
+
+for (let i = 1; i <= employeers; i += 1) {
+  const salary = Math.round(
+    Math.random() * (maxSalary - minSalary) + minSalary
+  );
+  console.log(`ЗП співробітника ${i} - ${salary}`);
+
+  totalSalary += salary;
+}
+console.log(totalSalary);
+
+// Задача 3
+const min1 = 0;
+const max1 = 5;
+let total1 = 0;
+
+for (let i = min1; i <= max1; i += 1) {
+  if (i % 2 !== 0) {
+    continue;
+  }
+  console.log(i);
+  total1 += i;
+}
+console.log('total', total1);
+
+// Задача 4
+let balance1 = 2000;
+const payement1 = 2000;
+
+console.log(`Загальна стоимость замовлення ${payement1} кредитів`);
+
+if (payement1 <= balance1) {
+  balance1 -= payement1;
+
+  console.log(`На счету залишилось ${balance1} кредитів`);
+} else {
+  console.log(`Недостатньо грошей ${balance1} для покупки`);
+}
+
+// Задача 4
+let totalSpent = 2000;
+let payement2 = 500;
+let discount = 0;
+
+if (totalSpent < 100) {
+  console.log('Не партнер, знижка 0%');
+  discount = 0;
+} else if (totalSpent >= 100 && totalSpent < 1000) {
+  console.log('Бронзовий партнер, знижка 2%');
+  discount = 0.02;
+} else if (totalSalary >= 1000 && totalSpent < 5000) {
+  console.log('Срібний партнер, знижка 5%');
+  discount = 0.05;
+} else if (totalSalary >= 5000) {
+  console.log('Золотой партнер, знижка 10%');
+  discount = 0.1;
+}
+
+payement2 -= payement2 * discount;
+
+console.log(
+  `Оформляємо замовлення на суму ${payement2} зі знижкою ${discount * 100}%`
+);
+
+totalSpent += payement2;
+
+console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
