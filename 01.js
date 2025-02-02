@@ -228,3 +228,59 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 4
+const calculateTotalPrice = function (items) {
+  let total = 0;
+
+  for (const item of items) {
+    total += item;
+  }
+  return total;
+};
+
+console.log(calculateTotalPrice([1, 2, 3]));
+console.log(calculateTotalPrice([4, 5, 6]));
+console.log(calculateTotalPrice([7, 8, 9]));
+
+const logItems = function (items) {
+  for (const item of items) {
+    console.log(item);
+  }
+};
+logItems(['Mango', 'Kiwi']);
+logItems([1, 2, 3]);
+
+const logins = ['a', 'b', 'c'];
+const loginToFind = 'b';
+
+const findLogins = function (allLogins, login) {
+  let message = `Користувач ${login} не знайден`;
+
+  for (const allLogin of allLogins) {
+    if (allLogin === login) {
+      message = `Користувач ${login} знайден`;
+    }
+  }
+
+  return message;
+};
+console.log(findLogins(logins, loginToFind));
+console.log(findLogins(logins, 'c'));
+console.log(findLogins(logins, 'cv'));
+
+const findSmallesNumber = function (numbers) {
+  let smallesNumber = numbers[0];
+
+  for (const number of numbers) {
+    if (number < smallesNumber) {
+      smallesNumber = number;
+    }
+  }
+
+  return smallesNumber;
+};
+
+console.log(findSmallesNumber([5, 4, 3, , 2, 1]));
+console.log(findSmallesNumber([50, 40, 30, , 20, 10]));
+console.log(findSmallesNumber([9, 8]));
