@@ -228,3 +228,136 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 6
+const numbers = [...[1, 2, 3], ...[4, 5, 6], ...[7, 8, 9]];
+console.log(numbers);
+
+// Задача 1
+const lastWeekTemps = [1, 2, 3];
+const currentTemps = [4, 5, 6];
+const nextWeekTemps = [7, 8, 9];
+
+const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps];
+console.log(allTemps);
+
+// Задача 2
+const defaultSettings = {
+  theme: 'light',
+  showNotifications: true,
+  hideSidebar: false,
+};
+
+const userSettings = {
+  showNotifications: false,
+  hideSidebar: true,
+};
+
+const finalSettings = {
+  ...defaultSettings,
+  ...userSettings,
+};
+console.log(finalSettings);
+
+// Деструктуризация обьекта
+const playlist = {
+  name: 'Мой плейлист',
+  rating: 4,
+  tracks: ['трек-1', 'трек-2'],
+  stats: { aa: 1, b: 2, c: 3 },
+};
+
+const {
+  name,
+  rating,
+  tracks,
+  stats: { aa, b, c },
+} = playlist;
+console.log(name);
+console.log(rating);
+console.log(tracks);
+console.log(aa);
+console.log(b);
+console.log(c);
+
+const author = { kiwi: 4, poly: 2 };
+const entries = Object.entries(author);
+
+for (const [name, rating] of entries) {
+  console.log(name, rating);
+}
+
+// Паттерн - Обьект настроек
+const fn = function (params) {
+  return params;
+};
+
+// Незрозуміло що це таке...
+console.log(fn(10, 5, true, [], {}, 6));
+
+// обьект з підписаними свойствами тоді все зрозуміло
+console.log(
+  fn({ age: 10, friends: 5, isOnline: true, hobbies: [], games: {}, rating: 6 })
+);
+
+// Корзина товарів
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    // console.table(this.items);
+    for (const item of this.items) {
+      if (item.name === product.name) {
+        item.quantity += 1;
+        return;
+      }
+    }
+
+    const newProduct = { ...product, quantity: 1 };
+    this.items.push(newProduct);
+  },
+  remove(productName) {
+    for (let i = 0; i < this.items.length; i += 1) {
+      const { name } = this.items[i];
+
+      if (productName === name) {
+        console.log('Нашли');
+        console.log(i);
+        this.items.splice(i, 1);
+      }
+    }
+  },
+  clean() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    let total = 0;
+
+    for (const item of this.items) {
+      total += item.price * item.quantity;
+    }
+    return total;
+  },
+  increaseQuantity(productName) {},
+  decreaseQuantity(productName) {},
+};
+
+console.log(cart.getItems());
+
+cart.add({ name: '🍎', price: 50 });
+cart.add({ name: '🥝', price: 60 });
+cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
+
+console.log(cart.getItems());
+console.log(cart.countTotalPrice());
+cart.remove('🍎');
+
+cart.clean();
+console.log(cart.getItems());
+console.log(cart.countTotalPrice());
