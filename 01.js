@@ -228,3 +228,136 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 5
+const playlist = {
+  name: 'Мой плейліст',
+  rating: 5,
+  tracks: ['трек-1', 'трек-2', 'трек-3'],
+  trackCount: 3,
+  // метод обьекта
+  changeName(newName) {
+    this.name = newName;
+  },
+  addTrack(track) {
+    this.tracks.push(track);
+  },
+  updateRating(newRating) {
+    this.rating = newRating;
+  },
+  getTrackCount() {
+    // return this.tracks.length;
+    this.trackCount = this.tracks.length;
+  },
+};
+
+playlist.changeName('Нове ім`я');
+playlist.addTrack('трек-4');
+playlist.addTrack('трек-5');
+playlist.updateRating(4);
+playlist.getTrackCount();
+console.log(playlist);
+
+const feedback = { good: 5, neutral: 10, bad: 7 };
+let totalFeedback = 0;
+let totalFeedback2 = 0;
+console.log(feedback);
+
+const keys = Object.keys(feedback);
+console.log(keys);
+
+for (const key of keys) {
+  console.log(feedback[key]);
+  totalFeedback += feedback[key];
+}
+
+console.log(totalFeedback);
+
+const values = Object.values(feedback);
+
+for (const value of values) {
+  totalFeedback2 += value;
+}
+console.log(totalFeedback2);
+
+// Робота з колекцією (масив обьектів)
+const friends = [
+  { name: 'Mango', online: true },
+  { name: 'Kiwi', online: false },
+  { name: 'Poly', online: true },
+  { name: 'Ajax', online: false },
+];
+console.log(friends);
+
+// for (const friend of friends) {
+//   console.log(friend.name);
+// }
+
+// Задача 1
+const findFriendbyName = function (allFriends, name) {
+  for (const allFriend of allFriends) {
+    allFriend.name;
+    if (allFriend.name === name) {
+      return 'Знайшли';
+    }
+  }
+  return 'Не знайшли';
+};
+console.log(findFriendbyName(friends, 'Poly'));
+
+// Задача 2
+const findFriendByName = function (allFriends) {
+  const names = [];
+
+  for (const allFriend of allFriends) {
+    names.push(allFriend.name);
+  }
+
+  return names;
+};
+
+console.log(findFriendByName(friends));
+
+// Задача 3
+const getOnlineFriends = function (allFriends) {
+  const onlineFriends = [];
+
+  for (const allFriend of allFriends) {
+    // console.log(allFriend);
+    if (allFriend.online) {
+      onlineFriends.push(allFriend);
+    }
+  }
+
+  return onlineFriends;
+};
+console.log(getOnlineFriends(friends));
+
+// Задача 4
+const getOfflineFriends = function (allFriends) {
+  const offlineFriends = [];
+
+  for (const allFriend of allFriends) {
+    if (!allFriend.online) {
+      offlineFriends.push(allFriend);
+    }
+  }
+
+  return offlineFriends;
+};
+console.log(getOfflineFriends(friends));
+
+// Задача 5
+const getFriendsDyOnlineStatus = function (allFriends) {
+  const friendsByStatus = { online: [], offline: [] };
+
+  for (const allFriend of allFriends) {
+    if (allFriend.online) {
+      friendsByStatus.online.push(allFriend);
+    } else {
+      friendsByStatus.offline.push(allFriend);
+    }
+  }
+  return friendsByStatus;
+};
+console.log(getFriendsDyOnlineStatus(friends));
