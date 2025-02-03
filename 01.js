@@ -284,3 +284,57 @@ const findSmallesNumber = function (numbers) {
 console.log(findSmallesNumber([5, 4, 3, , 2, 1]));
 console.log(findSmallesNumber([50, 40, 30, , 20, 10]));
 console.log(findSmallesNumber([9, 8]));
+
+const changeCase = function (string) {
+  const letters = string.split('');
+  let invertedString = '';
+
+  for (const letter of letters) {
+    if (letter === letter.toLowerCase()) {
+      invertedString += letter.toUpperCase();
+    } else {
+      invertedString += letter.toLowerCase();
+    }
+  }
+
+  return invertedString;
+};
+console.log(changeCase('Hello'));
+console.log(changeCase('JavaScript'));
+console.log(changeCase('HELLO Mom'));
+
+const slugify = function (title) {
+  return title.toLowerCase().split(' ').join('-');
+  // const normalizedTitle = title.toLowerCase().split(' ').join('-');
+
+  // return normalizedTitle;
+};
+console.log(slugify('Top 10 React'));
+console.log(slugify('NaN settings'));
+
+const add = function (...args) {
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg;
+  }
+
+  return total;
+};
+console.log(add(10, 2, 3));
+console.log(add(40, 5, 6));
+
+const filterNumbers = function (array, ...args) {
+  const uniqueElements = [];
+
+  for (const el of array) {
+    if (args.includes(el)) {
+      uniqueElements.push(el);
+    }
+  }
+
+  return uniqueElements;
+};
+
+console.log(filterNumbers([1, 2, 3], 10, 20, 30, 2, 3));
+console.log(filterNumbers([1, 2, 3, 5, 6], 10, 20, 30, 2, 3, 5, 6));
