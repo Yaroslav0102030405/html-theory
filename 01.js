@@ -228,3 +228,50 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson-7 Фільтр
+const filter = function (array, callback2) {
+  const filteredArray = [];
+
+  for (const el of array) {
+    const passed = callback2(el);
+
+    if (passed) {
+      filteredArray.push(el);
+    }
+  }
+
+  return filteredArray;
+};
+
+const callback1 = function (value) {
+  return value >= 5;
+};
+console.log(filter([1, 2, 3, 4, , 5, 6, 7, 8], callback1));
+
+// Задача 2
+const fruits = [
+  { name: 'apples', quantity: 200, isFresh: true },
+  { name: 'grapes', quantity: 150, isFresh: false },
+  { name: 'bananas', quantity: 100, isFresh: false },
+];
+
+const filter2 = function (allfruits, callback) {
+  const filteredFruits = [];
+
+  for (const fruit of allfruits) {
+    const passed = callback(fruit);
+
+    if (passed) {
+      filteredFruits.push(fruit);
+    }
+  }
+
+  return filteredFruits;
+};
+
+const getFruitsWithQuantity = function (fruit) {
+  return fruit.quantity >= 120;
+};
+
+console.log(console.log(filter2(fruits, getFruitsWithQuantity)));
