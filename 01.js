@@ -275,3 +275,32 @@ const getFruitsWithQuantity = function (fruit) {
 };
 
 console.log(console.log(filter2(fruits, getFruitsWithQuantity)));
+
+// Замикання
+const makeSheff = function (name) {
+  const makeDish = function (dish) {
+    console.log(`${name} готує ${dish}`);
+  };
+
+  return makeDish;
+};
+
+const mango = makeSheff('Mango');
+mango('Торт');
+mango('Пірожки');
+console.dir(mango);
+
+const poly = makeSheff('Poly');
+poly('суши');
+poly('піцу');
+
+const rounder = function (places) {
+  return function (number) {
+    return Number(number.toFixed(places));
+  };
+};
+
+const rounder2 = rounder(2);
+console.log(rounder2(3.21233));
+const rounder3 = rounder(3);
+console.log(rounder3(3.455454));
