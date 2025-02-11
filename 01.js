@@ -284,3 +284,27 @@ refs.incrementEl.addEventListener('click', function () {
   counter.increment();
   refs.valueEl.textContent = counter.value;
 });
+
+// lesson 9
+const logMessage = (message) => message;
+console.log(logMessage('Привіт!'));
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+// const greaterThenTwo = numbers.filter((num) => num < 4);
+// console.log(greaterThenTwo);
+
+// const multByTwo = greaterThenTwo.map((num) => num * 3);
+// console.log(multByTwo);
+
+// const sorted = multByTwo.sort((a, b) => b - a);
+// console.log(sorted);
+
+const res = numbers
+  .filter((num) => num < 4)
+  .map((num) => num * 3)
+  .sort((a, b) => b - a);
+
+console.log(res);
+
+const players = [{ id: 'id-1', tag: 'Mango', isOnline: true, rank: 800 }];
