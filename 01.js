@@ -230,3 +230,57 @@ totalSpent += payement2;
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
 
 // lesson 8
+const showThis = function () {
+  // console.log(this);
+  return this;
+};
+
+const objA = { a: 5, b: 10 };
+
+console.log(showThis.call(objA));
+console.log(showThis.apply(objA));
+
+const changeColor = function (color) {
+  console.log(this);
+  return (this.color = color);
+};
+
+const hat = { color: 'black' };
+const sweatr = { color: 'red' };
+
+console.log(changeColor.call(hat, 'orange'));
+console.log(changeColor.call(sweatr, 'green'));
+console.log(hat);
+console.log(sweatr);
+
+const changeHatColor = changeColor.bind(hat);
+changeHatColor('yellow');
+console.log(hat);
+
+const counter = {
+  value: 0,
+  increment() {
+    console.log(this);
+    this.value += 1;
+  },
+  decrement() {
+    this.value -= 1;
+  },
+};
+
+const refs = {
+  decrementEl: document.querySelector('.js__decrement'),
+  valueEl: document.querySelector('.js__value'),
+  incrementEl: document.querySelector('.js__increment'),
+};
+
+refs.decrementEl.addEventListener('click', function () {
+  counter.decrement();
+  // console.log(counter);
+  refs.valueEl.textContent = counter.value;
+});
+
+refs.incrementEl.addEventListener('click', function () {
+  counter.increment();
+  refs.valueEl.textContent = counter.value;
+});
