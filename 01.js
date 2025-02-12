@@ -307,4 +307,44 @@ const res = numbers
 
 console.log(res);
 
-const players = [{ id: 'id-1', tag: 'Mango', isOnline: true, rank: 800 }];
+const players = [
+  { id: 'id-1', tag: 'Mango', isOnline: true, rank: 800 },
+  { id: 'id-2', tag: 'Poly', isOnline: false, rank: 600 },
+  { id: 'id-3', tag: 'Ajax', isOnline: true, rank: 100 },
+  { id: 'id-4', tag: 'Kiwi', isOnline: true, rank: 200 },
+];
+
+const onlineAndSorted = players
+  .filter((player) => player.isOnline)
+  .sort((prevPlayer, nextPlayer) => prevPlayer.rank - nextPlayer.rank);
+
+console.log(onlineAndSorted);
+
+const updatePlayers = players.map((player) => ({
+  ...player,
+  rank: player.rank + player.rank * 0.2,
+}));
+
+console.log(updatePlayers);
+
+const updatePlayers2 = players
+  .map((player) => ({
+    ...player,
+    rank: player.rank + 50,
+  }))
+  .filter((player) => player.isOnline)
+  .sort((prevPlayer, nextPlayer) => prevPlayer.rank - nextPlayer.rank);
+
+console.log(updatePlayers2);
+
+const playerIdToUpdate = 'id-3';
+
+const updatePlayers3 = players.map((player) => {
+  if (player.id === playerIdToUpdate) {
+    // return { ...player, rank: player.rank + 1000 };
+    return { ...player, tag: (player.tag = 'Apple') };
+  }
+  return player;
+});
+
+console.log(updatePlayers3);
