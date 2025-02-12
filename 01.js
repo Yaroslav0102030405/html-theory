@@ -228,3 +228,61 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// приватні свойства йдуть на екземпляр а сатичні на самом констукторі
+
+// lesson 10
+class Car {
+  // статичні властивості пишемо зверху
+  static description = 'Описання автомобіля';
+  // все що йде на екземпліт в конструкторі знаходиться
+  static loginfo(carObj) {
+    console.log(carObj);
+  }
+
+  // публічне свойство
+  mySuperPublicFriend = 555;
+  // приватне свойство
+  #test = 'test';
+
+  constructor({ brand, model, price } = {}) {
+    this.brand = brand;
+    this._model = model;
+    this._price = price;
+  }
+  // все що йде на прототип тут знаходиться
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+
+  // геттери і сеттери - це спрощенне інтерфейса для роботи з властивостями
+  // щоб перезаписати чи прочитати якесь значення свойства
+  get price() {
+    return this._price;
+  }
+
+  set price(newPrice) {
+    this._price = newPrice;
+  }
+
+  get model() {
+    return this._model;
+  }
+
+  set model(newModal) {
+    this._model = newModal;
+  }
+}
+
+console.log(Car.description);
+
+const carInstance = new Car({ brand: 'Audi', model: 'Q3', price: 35000 });
+// console.log(carInstance);
+
+// Car.loginfo(carInstance);
+console.log(carInstance.model);
+carInstance.model = 'Q4';
+console.log(carInstance.price);
+carInstance.price = 50000;
+console.log(carInstance.price);
+console.log(carInstance.model);
