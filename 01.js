@@ -286,3 +286,30 @@ console.log(carInstance.price);
 carInstance.price = 50000;
 console.log(carInstance.price);
 console.log(carInstance.model);
+
+class Hero {
+  constructor({ name = 'hero', xp = 0 } = {}) {
+    this.name = name;
+    this.xp = xp;
+  }
+}
+
+class Warrion extends Hero {
+  constructor({ weapon, ...restProps } = {}) {
+    super(restProps);
+    this.weapon = weapon;
+  }
+}
+
+const mango = new Warrion({ name: 'mango', xp: 1000, weapon: 'алебарда' });
+
+class Mage extends Warrion {
+  constructor({ spells, ...restProps } = {}) {
+    super(restProps);
+    this.spells = spells;
+  }
+}
+
+console.log(mango);
+const poly = new Mage({ name: 'Poly', xp: 2000, spells: 'Ябко' });
+console.log(poly);
