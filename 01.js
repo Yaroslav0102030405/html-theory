@@ -228,3 +228,169 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 11
+// Методи массивів
+// forEach
+// map
+// filter
+// find
+// every and some
+// reduce
+// sort
+
+// forEach - замена for просто перебирає массив
+// першим аргументом це колбек функція а другим аргументом це обьект в контексті якого потрібно викликати
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.forEach((number) => console.log(number));
+
+// map - перебирає массив і повертає массив такої дліни
+// коли треб а з великої колекції створити нову колекцію якихось свойств
+
+const doubledNumbers = numbers.map((number) => number * 2);
+console.log(doubledNumbers);
+
+// массив обьектів
+const players = [
+  {
+    id: 'player-1',
+    name: 'Mango',
+    timePlayed: 310,
+    points: 54,
+    quantity: 2,
+    online: false,
+  },
+  {
+    id: 'player-2',
+    name: 'Poly',
+    timePlayed: 470,
+    points: 92,
+    quantity: 3,
+    online: true,
+  },
+  {
+    id: 'player-3',
+    name: 'Ajax',
+    timePlayed: 230,
+    points: 48,
+    quantity: 5,
+    online: true,
+  },
+  {
+    id: 'player-4',
+    name: 'Chelsy',
+    timePlayed: 80,
+    points: 71,
+    quantity: 4,
+    online: false,
+  },
+];
+
+const playersName = players.map((player) => player.name);
+console.log(playersName);
+const playersPoints = players.map((player) => player.points);
+console.log(playersPoints);
+const playersId = players.map((player) => player.id);
+console.log(playersId);
+
+const playerNameAndOnline = players.map(({ name, online }) => ({
+  name,
+  online,
+}));
+console.log(playerNameAndOnline);
+
+const updatedPlayers = players.map((player) => {
+  return {
+    ...player,
+    points: player.points * 1.1,
+  };
+});
+console.log(updatedPlayers);
+
+const playersIdUpdate = 'player-3';
+
+// const updatedPlayers2 = players.map((player) => {
+//   if (playersIdUpdate === player.id) {
+//     return {
+//       ...player,
+//       // timePlayed: player.timePlayed + 2000,
+//       name: (player.name = 'newName'),
+//     };
+//   }
+
+//   return player;
+// });
+// console.log(updatedPlayers2);
+
+const updatedPlayers2 = players.map((player) =>
+  playersIdUpdate === player.id
+    ? { ...player, name: (player.name = 'newName') }
+    : player
+);
+console.log(updatedPlayers2);
+
+// filter - повертає новий массив з від фільтрованими значеннями
+// пишемо по якому условію треба від фільтровати
+const numbersFilter = numbers.filter((number) => number > 3);
+console.log(numbersFilter);
+
+const onlinePlayers = players.filter((player) => player.online);
+console.log(onlinePlayers);
+
+const offlinePlayers = players.filter((player) => !player.online);
+console.log(offlinePlayers);
+
+const hardcorePlayers = players.filter((player) => player.timePlayed > 300);
+console.log(hardcorePlayers);
+
+// find - використовується для пошуку в коллекції одно унікального елемента
+// знаходить перший елемент який заховолняє вимогам
+const numberFind = numbers.find((number) => number > 5);
+const numberFind2 = numbers.find((number) => number === 5);
+console.log(numberFind2);
+console.log(numberFind);
+
+const playerToFind = 'player-4';
+
+const playerWithId = players.find((player) => player.id === playerToFind);
+console.log(playerWithId);
+
+const findPlayerByid = (allPlayers, playerId) => {
+  return allPlayers.find((player) => player.id === playerId);
+};
+
+console.log(findPlayerByid(players, playerToFind));
+
+// повертає статус true або false
+// every - повертає true якщо всі елементи зодовольняють условію
+const isAllOnline = players.every((player) => player.online);
+console.log(isAllOnline);
+
+// some - якщо один задовлінє вимогам
+const isAnyOnline = players.some((player) => player.online);
+console.log(isAnyOnline);
+
+// reduce - це швецарскій нож для роботи з коллекцією
+// він бере багато і із нього робить щось одне
+const total = numbers.reduce((acc, number) => acc + number, 0);
+console.log(total);
+
+const salaru = { a: 10, b: 20, c: 30 };
+
+const totalSalary1 = Object.values(salaru).reduce(
+  (total, value) => total + value,
+  0
+);
+console.log(totalSalary1);
+
+const totalTimePlayed = players.reduce(
+  (acc, player) => acc + player.timePlayed,
+  0
+);
+console.log(totalTimePlayed);
+
+const totalAmout = players.reduce(
+  (acc, { timePlayed, quantity }) => acc + timePlayed * quantity,
+  0
+);
+console.log(totalAmout);
