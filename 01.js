@@ -372,6 +372,8 @@ console.log(isAnyOnline);
 
 // reduce - це швецарскій нож для роботи з коллекцією
 // він бере багато і із нього робить щось одне
+// reduce - для роботи з числами массивами та обьектами
+// більшість робота з числами використовують reduce
 const total = numbers.reduce((acc, number) => acc + number, 0);
 console.log(total);
 
@@ -394,3 +396,18 @@ const totalAmout = players.reduce(
   0
 );
 console.log(totalAmout);
+
+const tweets = [
+  { id: '1', likes: 2, tags: ['js', 'node'] },
+  { id: '2', likes: 4, tags: ['js', 'react'] },
+  { id: '3', likes: 5, tags: ['js', 'css'] },
+  { id: '4', likes: 2, tags: ['css', 'node'] },
+];
+
+const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
+console.log(allTags);
+
+const tagsStats = allTags.reduce((acc, tweet) => {
+  return { ...acc, [tweet]: acc[tweet] ? acc[tweet] + 1 : 1 };
+}, {});
+console.log(tagsStats);
