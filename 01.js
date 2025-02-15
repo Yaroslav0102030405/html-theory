@@ -228,3 +228,69 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 12
+// sort - підходить для фронтет задач повседневних
+// sort - змінює оригінальний массив
+// сортирує по возрастанию приводит елементи к строке и сортирує по юнікоду
+// сорт змінює елементи в массиві і нічого не удаляє
+const numbers = [10, 20, 30, 40, 50];
+
+const numbersSort = numbers.sort((start, end) => end - start);
+console.log(numbersSort);
+
+// щоб зробити копію масиву е slice() або spreed
+const copy = [...numbers];
+console.log(copy === numbers);
+
+const players = [
+  { id: 'player-1', name: 'Mango', timePlated: 310, online: true },
+  { id: 'player-2', name: 'Poly', timePlated: 470, online: false },
+  { id: 'player-3', name: 'Ajax', timePlated: 110, online: true },
+  { id: 'player-4', name: 'Kiwi', timePlated: 210, online: true },
+];
+
+const sortedByBestPlayers = [...players].sort((prePlayer, nextPlayer) => {
+  return prePlayer.timePlated - nextPlayer.timePlated;
+});
+console.log(sortedByBestPlayers);
+
+const sortedTimePlayed = [...players].sort((prevPlayer, nextPlayer) => {
+  return nextPlayer.timePlated - prevPlayer.timePlated;
+});
+console.log(sortedTimePlayed);
+
+const sortedByName = [...players].sort((a, b) => {
+  const result = a.name[0] > b.name[0];
+
+  return result ? 1 : -1;
+
+  // if (result) {
+  //   return 1;
+  // }
+  // return -1;
+});
+
+console.log(sortedByName);
+
+const name = ['a', 'b', 'с'];
+const name2 = ['d'];
+const res = name.length + name2.length;
+console.log(res);
+
+const array1 = [1, 2, 3, [4, 5, [6]]];
+console.log(array1.flat(2));
+
+const num2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// chaining - цепочка викликів
+const numResult = num2
+  .filter((num) => num > 5)
+  .map((num) => num * 2)
+  .sort((a, b) => b - a);
+console.log(numResult);
+
+const onlineAndSort = players
+  .filter((player) => player.online)
+  .sort((a, b) => a.timePlated - b.timePlated);
+console.log(onlineAndSort);
