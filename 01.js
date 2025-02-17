@@ -228,3 +228,25 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 13
+const linkEl = document.querySelectorAll('.menu__item');
+console.log(linkEl);
+
+for (const value of linkEl) {
+  linkEl[0].textContent = 'Привет';
+  linkEl[1].textContent = 'Пока';
+  linkEl[2].textContent = 'Прощай';
+  console.log(value);
+}
+
+// console.log(value);
+
+const btnEl = document.querySelector('.header__btn');
+const imageEl = document.querySelector('.header__image');
+const titleEl = document.querySelector('.header__title');
+
+btnEl.addEventListener('click', () => {
+  titleEl.textContent = 'Пока!';
+  imageEl.src = 'images/img-1.jpg';
+});
