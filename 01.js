@@ -245,8 +245,112 @@ for (const value of linkEl) {
 const btnEl = document.querySelector('.header__btn');
 const imageEl = document.querySelector('.header__image');
 const titleEl = document.querySelector('.header__title');
+const inputEl = document.querySelector('input');
+const menuEl = document.querySelector('.menu');
 
 btnEl.addEventListener('click', () => {
   titleEl.textContent = 'Пока!';
   imageEl.src = 'images/img-1.jpg';
+  inputEl.value = '1234';
+  // imageEl.classList.replace('header__image', 'cool');
+
+  if (imageEl.classList.contains('header__image')) {
+    imageEl.classList.remove('header__image');
+  }
 });
+
+console.log(menuEl.children);
+console.log(menuEl.firstElementChild);
+console.log(menuEl.children[1]);
+console.log(menuEl.lastElementChild);
+menuEl.firstElementChild.textContent = 'Первый';
+
+const title = document.createElement('h3');
+title.textContent = 'Новый елемент';
+title.classList.add('header__pre-title');
+
+const image = document.createElement('img');
+image.src = 'images/img-1.jpg';
+
+document.body.append(title, image);
+
+const colorPickerOptions = [
+  { label: 'red', color: '#F44336' },
+  { label: 'green', color: '#4CAF50' },
+  { label: 'red', color: '#2196F3' },
+  { label: 'red', color: '#F44336' },
+  { label: 'red', color: '#F44336' },
+];
+
+const containerColorPicker = document.querySelector('.js-colorPicker');
+
+// const elements = colorPickerOptions.map(({ label, color }) => {
+//   const buttonEl = document.createElement('button');
+//   buttonEl.type = 'button';
+//   buttonEl.classList.add('btn__color');
+//   buttonEl.textContent = label;
+//   buttonEl.style.backgroundColor = color;
+
+//   return buttonEl;
+// });
+const makeColorPicker = (options) => {
+  return options.map(({ label, color }) => {
+    const buttonEl = document.createElement('button');
+    buttonEl.type = 'button';
+    buttonEl.classList.add('btn__color');
+    buttonEl.textContent = label;
+    buttonEl.style.backgroundColor = color;
+
+    return buttonEl;
+  });
+};
+
+const elements = makeColorPicker(colorPickerOptions);
+containerColorPicker.append(...elements);
+
+import products from './products.js';
+
+const makeProduct = ({ name, description, price }) => {
+  const productEl = document.createElement('acticle');
+  productEl.classList.add('product');
+
+  const titleEl1 = document.createElement('h1');
+  titleEl1.textContent = name;
+
+  const descr = document.createElement('p');
+  descr.textContent = description;
+
+  const priceEl = document.createElement('p');
+  priceEl.textContent = price;
+
+  productEl.append(titleEl1, descr, priceEl);
+
+  return productEl;
+};
+
+const elements2 = products.map(makeProduct);
+console.log(elements2);
+
+const productsContainer = document.querySelector('.js-container');
+productsContainer.append(...elements2);
+
+import transaction from './transaction.js';
+
+const makeTransactionsTableMarkup = ({ id, name, price }) => {
+  return `<tr>
+          <td>${id}</td>
+          <td>${name}</td>
+          <td>${price}</td>
+        </tr>`;
+};
+
+console.log(makeTransactionsTableMarkup(transaction[1]));
+
+const tableContainer = document.querySelector('.js-table');
+
+const makeTransactionsTableRows = transaction
+  .map(makeTransactionsTableMarkup)
+  .join('');
+
+tableContainer.insertAdjacentHTML('beforeend', makeTransactionsTableRows);
+console.log(makeTransactionsTableRows);
