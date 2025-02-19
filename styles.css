@@ -149,3 +149,51 @@ a {
   stroke: currentColor;
   fill: currentColor;
 }
+
+.js__container-message {
+  border: 1px solid black;
+  width: 400px;
+  height: 200px;
+  background-color: cadetblue;
+}
+
+body.show__modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+body.show__modal .modal {
+  transform: scale(1);
+}
+
+.js__backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(71, 12, 125, 0.386);
+  z-index: 999;
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 200ms,
+    ease-in-out,
+    visibility 200ms,
+    ease-in-out;
+}
+
+.modal {
+  padding: 24px;
+  max-width: 640px;
+  width: 100%;
+  min-height: 320px;
+  border: 1px solid black;
+  background-color: white;
+}

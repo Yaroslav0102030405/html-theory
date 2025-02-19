@@ -85,19 +85,41 @@
       <b>Тип подписки</b>
       <label>
         Free
-        <input type="radio" name="subscrioption" value="free" />
+        <input type="radio" name="subscription" value="free" />
       </label>
       <label>
         Basic
-        <input type="radio" name="subscrioption" value="basic" />
+        <input type="radio" name="subscription" value="basic" />
       </label>
       <label>
         Pro
-        <input type="radio" name="subscrioption" value="pro" />
+        <input type="radio" name="subscription" value="pro" />
+      </label>
+      <br />
+      <label>
+        <input class="js__checkbox" type="checkbox" />
+        Принимаю лицензионое соглашение
       </label>
 
-      <button type="submit">Зарегестрироваться</button>
+      <button class="js__form-btn" type="submit" disabled>
+        Зарегестрироваться
+      </button>
     </form>
+
+    <div class="js__container-message">
+      <p class="js__message" style="color: white"></p>
+    </div>
+    <button class="js__btnRemove-message">Удалить сообщение</button>
+
+    <button class="js__open-modal">Открыть модалку</button>
+
+    <div class="backdrop js__backdrop">
+      <div class="modal">
+        <h1>Модалка</h1>
+        <p>открыта</p>
+        <button class="js__close-modal">Закрыть модалку</button>
+      </div>
+    </div>
 
     <script src="./01.js" type="module"></script>
   </body>

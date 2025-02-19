@@ -39,14 +39,14 @@ console.log(salaryNumber);
 // Приклоди з обёектом Math
 
 // Приклад
-const colors = ['orange', 'tomato', 'blue', 'green', 'gray', 'black'];
+// const colors = ['orange', 'tomato', 'blue', 'green', 'gray', 'black'];
 
-const max = colors.length - 1;
-const min = 0;
-const index = Math.round(Math.random() * (max - min) + min);
-const color = colors[index];
+// const max = colors.length - 1;
+// const min = 0;
+// const index = Math.round(Math.random() * (max - min) + min);
+// const color = colors[index];
 
-document.body.style.backgroundColor = color;
+// document.body.style.backgroundColor = color;
 
 // 2 Методи роботи з строками
 // Довжина строки
@@ -228,3 +228,88 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 15
+const formRef = document.querySelector('.js__form');
+const checkboxRef = document.querySelector('.js__checkbox');
+const formBtn = document.querySelector('.js__form-btn');
+
+formRef.addEventListener('submit', onFormSubmit);
+checkboxRef.addEventListener('change', onChange);
+
+function onFormSubmit(e) {
+  e.preventDefault();
+
+  // первый вариант собрать данные из формы
+  const formElements = e.currentTarget.elements;
+  // console.log(formElements);
+
+  // const email = formElements.email.value;
+  // const password = formElements.password.value;
+  // const subscriptions = formElements.subscription.value;
+
+  // const formData = {
+  //   email,
+  //   password,
+  //   subscriptions,
+  // };
+
+  // console.log(formData);
+
+  // второй вариант
+  const formData = new FormData(e.currentTarget);
+  formData.forEach((value, name) => {
+    console.log(value, name);
+  });
+  // console.log(formData);
+}
+
+function onChange(e) {
+  formBtn.disabled = !e.currentTarget.checked;
+}
+
+const messageRef = document.querySelector('.js__message');
+const btnRemoveMessage = document.querySelector('.js__btnRemove-message');
+window.addEventListener('keypress', onKeypress);
+btnRemoveMessage.addEventListener('click', onClearMessage);
+
+function onKeypress(e) {
+  messageRef.textContent += e.key;
+}
+
+function onClearMessage() {
+  messageRef.textContent = '';
+}
+
+// открытие модалки
+const refs = {
+  openModal: document.querySelector('.js__open-modal'),
+  closeModal: document.querySelector('.js__close-modal'),
+  backdrop: document.querySelector('.js__backdrop'),
+};
+
+refs.openModal.addEventListener('click', onOpenModal);
+refs.closeModal.addEventListener('click', onCloseModal);
+refs.backdrop.addEventListener('click', onBackdrop);
+
+function onOpenModal() {
+  window.addEventListener('keydown', onEscKeyPress);
+  document.body.classList.add('show__modal');
+}
+
+function onCloseModal() {
+  window.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('show__modal');
+}
+
+function onBackdrop(e) {
+  if (e.currentTarget === e.target) {
+    onCloseModal();
+  }
+}
+
+function onEscKeyPress(e) {
+  if (e.code === 'Escape') {
+    onCloseModal();
+  }
+}
