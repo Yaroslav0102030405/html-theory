@@ -228,3 +228,43 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 15
+const containerRef = document.querySelector('.js-container2');
+containerRef.addEventListener('click', onClick);
+
+function onClick(e) {
+  // console.log(e.target);
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  console.log(e.target.textContent);
+}
+
+// Добавить кнопку
+const btnAdd = document.querySelector('.btn__add');
+const btnRemove = document.querySelector('.btn__remove');
+let labelCounter = 5;
+
+btnAdd.addEventListener('click', onAddBtnClick);
+btnRemove.addEventListener('click', onBtnRemove);
+
+function onAddBtnClick() {
+  const btn = document.createElement('button');
+  btn.textContent = `Кнопка ${labelCounter}`;
+  btn.type = 'button';
+
+  containerRef.appendChild(btn);
+  labelCounter += 1;
+}
+
+function onBtnRemove() {
+  // btnAdd.remove();
+
+  if (labelCounter > 1) {
+    containerRef.lastElementChild.remove();
+    labelCounter -= 1;
+  } else {
+    return;
+  }
+}
