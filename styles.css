@@ -149,3 +149,32 @@ a {
   stroke: currentColor;
   fill: currentColor;
 }
+
+.tags-active {
+  color: white;
+  background-color: red;
+}
+
+.js-palette {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.div {
+  width: 200px;
+  height: 130px;
+}
+
+.js-palette li {
+  width: 200px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
+.color-card.is-active {
+  transform: perspective(400px) rotateX(10deg);
+}

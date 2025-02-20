@@ -268,3 +268,101 @@ function onBtnRemove() {
     return;
   }
 }
+
+//
+const tagsContainer = document.querySelector('.js-list');
+let selectedTag = [];
+// let selectedTag = new Set();
+tagsContainer.addEventListener('click', onTagContainerClick);
+
+function onTagContainerClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const isActiveButton = e.target.classList.contains('tags-active');
+
+  if (isActiveButton) {
+    // selectedTag.delete(e.target.dataset.value);
+    selectedTag.pop(e.target.dataset.value);
+  } else {
+    // selectedTag.add(e.target.dataset.value);
+    selectedTag.push(e.target.dataset.value);
+  }
+
+  // пошук активної кнопки
+  // const currentActiveButton = document.querySelector('.tags-active');
+  // currentActiveButton?.classList.remove('tags-active');
+  e.target.classList.toggle('tags-active');
+
+  // додаємо клас
+  // e.target.classList.add('tags-active');
+
+  console.log(selectedTag);
+}
+
+// динамычна розмытка карточок
+const colors1 = [
+  { hex: '#ff4000', rgb: 'rgb(255, 64, 0)' },
+  { hex: '#ffff00', rgb: 'rgb(255, 255, 0)' },
+  { hex: '#bfff00', rgb: 'rgb(191, 255, 0)' },
+];
+
+const paletteContainer = document.querySelector('.js-palette');
+const cardsMarkup = createColorsCardMarkup(colors1);
+paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
+paletteContainer.addEventListener('click', onContainerClick);
+
+function onContainerClick(e) {
+  const isColor = e.target.classList.contains('color');
+  if (!isColor) {
+    return;
+  }
+
+  // const currentActiveCard = document.querySelector('.color-card.is-active');
+  // if (currentActiveCard) {
+  //   currentActiveCard.classList.remove('is-active');
+  // }
+
+  const parentColorCard = e.target.closest('.color-card');
+
+  // parentColorCard.classList.add('is-active');
+  removeActiveCaardClass();
+  addActiveCardClass(parentColorCard);
+  // document.body.style.backgroundColor = e.target.dataset.hex;
+  setBodyBgColor(e.target.dataset.hex);
+}
+
+function setBodyBgColor(color) {
+  document.body.style.backgroundColor = color;
+}
+
+function removeActiveCaardClass() {
+  const currentActiveCard = document.querySelector('.color-card.is-active');
+  if (currentActiveCard) {
+    currentActiveCard.classList.remove('is-active');
+  }
+}
+
+function addActiveCardClass(card) {
+  card.classList.add('is-active');
+}
+
+function createColorsCardMarkup(colors) {
+  return colors
+    .map(({ hex, rgb }) => {
+      return ` <li>
+    <div class="div color color-card"
+    data-hex="${hex}" 
+    data-rgb="${rgb}" 
+    style="background-color: ${hex}">
+    </div>
+    <div>
+      <p>HEX: ${hex}</p>
+      <p>RGB: ${rgb}</p>
+    </div>
+  </li>`;
+    })
+    .join('');
+}
+console.log(createColorsCardMarkup(colors1));
