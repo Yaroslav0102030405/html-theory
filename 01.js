@@ -228,3 +228,76 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 16
+const tech = [
+  { label: 'HTML' },
+  { label: 'CSS' },
+  { label: 'REACT' },
+  { label: 'NODE' },
+  { label: 'SCSS' },
+];
+
+const listRef = document.querySelector('.js-list');
+const inputRef = document.querySelector('#filter');
+
+inputRef.addEventListener('input', _.debounce(onFilterItems, 300));
+
+function createListItemsMarkup(items) {
+  return items.map((item) => `<li>${item.label}</li>`).join('');
+}
+
+const listItemsMarkup = createListItemsMarkup(tech);
+// listRef.innerHTML = listItemsMarkup;
+populatelist(listItemsMarkup);
+
+function onFilterItems(e) {
+  console.log(e.target.value);
+  const filter = e.target.value.toLowerCase();
+
+  const filterItems = tech.filter((t) =>
+    t.label.toLowerCase().includes(filter)
+  );
+
+  // console.log(filterItems);
+  const listItemsFilterMarkup = createListItemsMarkup(filterItems);
+  console.log(listItemsFilterMarkup);
+
+  // listRef.innerHTML = listItemsFilterMarkup;
+  populatelist(listItemsFilterMarkup);
+}
+
+function populatelist(markup) {
+  listRef.innerHTML = markup;
+}
+
+// загрузка библиотке по условию
+
+if ('loading' in HTMLImageElement.prototype) {
+  console.log('Браузер поддерживает линивую загрузку');
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  images.forEach((img) => {
+    img.src = img.dataset.src;
+  });
+} else {
+  console.log('Брайузер не поддерживает');
+  // Dynamically import the LazySizes library
+  const script = document.createElement('script');
+  script.src =
+    'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
+  script.integrity =
+    'sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==';
+  script.crossorigin = 'anonymous';
+  script.referrerpolicy = 'no-referrer';
+
+  document.body.appendChild(script);
+}
+
+{
+  /* <script
+src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+></script> */
+}
