@@ -149,3 +149,7 @@ a {
   stroke: currentColor;
   fill: currentColor;
 }
+
+textarea {
+  resize: none;
+}
