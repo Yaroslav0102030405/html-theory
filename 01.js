@@ -228,3 +228,62 @@ console.log(
 totalSpent += payement2;
 
 console.log(`Загальна сума всіх покупок в магазині ${totalSpent}`);
+
+// lesson 19
+const user = {
+  name: 'Yaroslav',
+  age: 44,
+};
+
+const userJsonStryngify = JSON.stringify(user);
+console.log(userJsonStryngify);
+
+const userJsonParse = JSON.parse(userJsonStryngify);
+console.log(userJsonParse);
+
+localStorage.setItem('key', userJsonStryngify);
+console.log(localStorage.getItem('key'));
+const saveData = localStorage.getItem('key');
+const parseData = JSON.parse(saveData);
+console.log(parseData);
+
+//
+
+const STORAGE_KEY = 'feedback-ms';
+const refs = {
+  form: document.querySelector('.js-form'),
+  textarea: document.querySelector('.js-textarea'),
+};
+
+// const formData = {};
+
+refs.form.addEventListener('submit', onFormSubmit);
+refs.textarea.addEventListener('input', _.throttle(onTextareaInput, 200));
+
+textareaMessage();
+
+function onFormSubmit(e) {
+  e.preventDefault();
+  e.currentTarget.reset();
+
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+function onTextareaInput(e) {
+  const message = e.target.value;
+
+  localStorage.setItem(STORAGE_KEY, message);
+}
+
+function textareaMessage() {
+  const savedMessage = localStorage.getItem(STORAGE_KEY);
+
+  if (savedMessage) {
+    refs.textarea.value = savedMessage;
+  }
+}
+
+// refs.form.addEventListener('input', (e) => {
+//   formData[e.target.name] = e.target.value;
+//   console.log(formData);
+// });
