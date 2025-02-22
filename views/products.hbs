@@ -1,0 +1,23 @@
+<section class='products'>
+  <div class='container'>
+    <h2>Популярні товари</h2>
+
+    <ul>
+      {{#each products}}
+        <li>
+          <a href='/product/{{id}}'>
+            <article class='product'>
+              <img
+                width='500'
+                class='product-image'
+                src='{{image}}'
+                alt='{{name}}'
+              />
+              <h3 class='product-price'>{{name}}</h3>
+              <p>Цена: {{price}} кредитов</p>
+              {{! <button class='product-btn'></button> }}
+            </article></a>
+        </li>{{/each}}
+    </ul>
+  </div>
+</section>
