@@ -1,0 +1,136 @@
+section {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.waper {
+  text-align: center;
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+}
+
+table {
+  text-align: left;
+  border-spacing: 0;
+  border: 16px solid #000;
+  border-radius: 20px;
+  padding: 10px;
+  display: inline-block;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+td:hover {
+  background-color: #1b7aa6;
+}
+
+.menu {
+  gap: 30px;
+  display: flex;
+}
+
+.menu-item {
+  background-color: wheat;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.menu-item:hover {
+  background-color: #8a2be2;
+}
+
+.menu-item:hover .submenu {
+  opacity: 1;
+}
+
+.submenu {
+  opacity: 0;
+  border: 1px solid #000;
+  width: 100%;
+  transition: opacity .25s linear;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.submenu li {
+  padding: 10px 20px;
+}
+
+.submenu li:hover a {
+  color: red;
+}
+
+.menu__btn {
+  background-color: #0000;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+}
+
+@media screen and (width >= 768px) {
+  .menu__btn {
+    display: none;
+  }
+}
+
+.menu__btn .close {
+  display: none;
+}
+
+.menu__btn.is-open .close {
+  display: block;
+}
+
+.menu__btn.is-open .menu {
+  display: none;
+}
+
+.mobile__m {
+  background-color: #0ff;
+  display: none;
+}
+
+.mobile__m.is-open {
+  display: block;
+}
+
+@media screen and (width <= 768px) {
+  .mobile__m {
+    display: none;
+  }
+}
+
+.icon {
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+/*# sourceMappingURL=index.4d663569.css.map */
