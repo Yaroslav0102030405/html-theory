@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100,
+      "author": "Бернард",
+      "rating": 8.94
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200,
+      "author": "Бернард",
+      "rating": 7.2
+    },
+    {
+      "id": "3",
+      "title": "another title",
+      "views": 200,
+      "author": "Бернард",
+      "rating": 6.6
+    },
+    {
+      "id": "4",
+      "title": "another title",
+      "views": 200,
+      "author": "Бернард",
+      "rating": 5.4
+    },
+    {
+      "id": "df3d",
+      "title": "another title",
+      "views": 200,
+      "author": "Ferrary",
+      "rating": 7.2
+    }
+  ]
+}
