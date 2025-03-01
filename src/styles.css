@@ -1,0 +1,151 @@
+section {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.waper {
+  text-align: center;
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+}
+
+/* thead {
+  border: 1px solid black;
+  padding: 10px;
+} */
+
+table {
+  display: inline-block;
+  text-align: left;
+  /* color: aqua; */
+  border: 16px solid rgb(0, 0, 0);
+  padding: 10;
+  border-radius: 20px;
+  border-spacing: 0;
+}
+
+th {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+td:hover {
+  background-color: rgb(27, 122, 166);
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-item {
+  position: relative;
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: wheat;
+}
+
+.menu-item:hover {
+  background-color: blueviolet;
+}
+
+.menu-item:hover .submenu {
+  /* display: block; */
+  opacity: 1;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  /* display: none; */
+  border: 1px solid black;
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.submenu li {
+  padding: 10px 20px;
+}
+
+/* .submenu li:hover {
+  background-color: brown;
+} */
+
+.submenu li:hover a {
+  color: red;
+}
+
+.menu__btn {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__btn {
+    display: none;
+  }
+}
+
+.menu__btn .close {
+  display: none;
+}
+
+.menu__btn.is-open .close {
+  display: block;
+}
+
+.menu__btn.is-open .menu {
+  display: none;
+}
+
+.mobile__m {
+  display: none;
+  background-color: aqua;
+}
+
+.mobile__m.is-open {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile__m {
+    display: none;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
