@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "1 Для тега <img /> обов'язково треба задавати width=\"\" і hight=\"\" <br/>\r 2 Усі фотографії повині бути зжати jpeg https://squoosh.app/ png https://compresspng.com/ru/ svg https://jakearchibald.github.io/svgomg/ ті валідція html https://validator.w3.org/nu/ <br/>\r 3 Перевірити продуктивність сайту https://pagespeed.web.dev/?hl=ru <br/>\r 2 Кожній секцї обовязково треба робити заголовок для підвіщення сімантичнотсі та допомоги ассистивниь технологіям. Якщо у таге section не має заголовка то він робиться для читалок і скривається для користовачів.",
   "main": "app.js",
-  "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
-    "server": "json-server --watch db.json",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "server": "json-server --watch db.json -p 4040",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

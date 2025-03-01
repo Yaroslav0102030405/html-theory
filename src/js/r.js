@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:4040';
 
 function fetchBooks() {
   fetch(`${BASE_URL}/posts`).then((response) => response.json());
@@ -7,5 +7,5 @@ function fetchBooks() {
 function fetchBooksId(booksId) {
   fetch(`${BASE_URL}/posts/${booksId}`).then((response) => response.json());
 }
-console.log(fetchBooks());
-console.log(fetchBooksId(2));
+fetchBooks();
+fetchBooksId(2);

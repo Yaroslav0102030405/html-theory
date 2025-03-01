@@ -22,4 +22,7 @@
 //   console.log(`Server ${4444}`);
 // });
 
-import './js/r';
+// import './js/r';
+import './js/c';
+import './js/u';
+import './js/d';

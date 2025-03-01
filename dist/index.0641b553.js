@@ -614,18 +614,68 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 // app.listen(4444, () => {
 //   console.log(`Server ${4444}`);
 // });
-var _r = require("./js/r");
+// import './js/r';
+var _c = require("./js/c");
+var _u = require("./js/u");
+var _d = require("./js/d");
 
-},{"./js/r":"bjM0X"}],"bjM0X":[function(require,module,exports,__globalThis) {
-const BASE_URL = 'http://localhost:3000';
-function fetchBooks() {
-    fetch(`${BASE_URL}/posts`).then((response)=>response.json());
+},{"./js/c":"bnQ4B","./js/u":"atzKu","./js/d":"bE4q5"}],"bnQ4B":[function(require,module,exports,__globalThis) {
+const BASE_URL = 'http://localhost:4040';
+// const newBook = {
+//   title: 'a title',
+//   views: 100,
+//   author: 'Арнольд',
+//   rating: 8.94,
+// };
+function addBook(book) {
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json '
+        },
+        body: JSON.stringify(book)
+    };
+    return fetch(`${BASE_URL}/posts`, options).then((res)=>res.json());
 }
-function fetchBooksId(booksId) {
-    fetch(`${BASE_URL}/posts/${booksId}`).then((response)=>response.json());
+addBook({
+    title: 'a title',
+    views: 100,
+    author: "\u0410\u0440\u043D\u043E\u043B\u044C\u0434",
+    rating: 8.94
+}).then(renderBook).catch((error)=>console.log(error));
+function renderBook(book) {
+    console.log("\u041F\u0440\u0438\u0439\u0448\u043B\u0430 \u0432\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u044C \u0432\u0456\u0434 \u0431\u0435\u043A\u0435\u043D\u0434\u0443 \u0456 \u043C\u043E\u0436\u043D\u0430 \u043C\u0430\u043B\u044E\u0432\u0430\u0442\u0438");
+    console.log(book);
 }
-console.log(fetchBooks());
-console.log(fetchBooksId(2));
+
+},{}],"atzKu":[function(require,module,exports,__globalThis) {
+const BASE_URL = 'http://localhost:4040';
+function updateBookId(update, bookId) {
+    const options = {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json '
+        },
+        body: JSON.stringify(update)
+    };
+    return fetch(`${BASE_URL}/posts/${bookId}`, options).then((res)=>res.json());
+}
+updateBookId({
+    title: 'a title',
+    views: 100,
+    author: "\u0410\u0440\u043D\u043E\u043B\u044C\u0434",
+    rating: 8.94
+}, 1);
+
+},{}],"bE4q5":[function(require,module,exports,__globalThis) {
+const BASE_URL = 'http://localhost:4040';
+function removeBookId(bookId) {
+    const options = {
+        method: 'DELETE'
+    };
+    return fetch(`${BASE_URL}/posts/${bookId}`, options).then((res)=>res.json());
+}
+removeBookId(1);
 
 },{}]},["jN95j","bNKaB"], "bNKaB", "parcelRequire94c2")
 

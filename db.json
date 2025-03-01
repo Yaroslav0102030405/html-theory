@@ -1,13 +1,6 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "a title",
-      "views": 100,
-      "author": "Бернард",
-      "rating": 8.94
-    },
-    {
       "id": "2",
       "title": "another title",
       "views": 200,
@@ -34,6 +27,82 @@
       "views": 200,
       "author": "Ferrary",
       "rating": 7.2
+    },
+    {
+      "id": "7667",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "ff8c",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "963c",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "f5a2",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "4ab4",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "f734",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "3cb6",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "e914",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "2c11"
+    },
+    {
+      "id": "64bd"
+    },
+    {
+      "id": "4103",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
+    },
+    {
+      "id": "d69c",
+      "title": "a title",
+      "views": 100,
+      "author": "Арнольд",
+      "rating": 8.94
     }
   ]
 }
