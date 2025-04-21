@@ -3,8 +3,19 @@
   --accent-color: #a66abe;
 }
 
+/* .montserrat-uniquifier {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+} */
+
 body {
   background-color: var(--title-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 .button {
@@ -14,6 +25,7 @@ body {
   font-size: 20px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-family: inherit;
 }
 
 .button:hover,
