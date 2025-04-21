@@ -1,3 +1,42 @@
+:root {
+  --title-color: #76d7c4;
+  --accent-color: #a66abe;
+}
+
+body {
+  background-color: var(--title-color);
+}
+
+.button {
+  border: none;
+  background-color: violet;
+  padding: 10px 40px;
+  font-size: 20px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.button:hover,
+button:focus {
+  background-color: var(--accent-color);
+}
+
+.current {
+  border-bottom: 2px solid var(--accent-color);
+  width: 100%;
+  /* border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px; */
+  /* border-radius: 2px; */
+  /* border-bottom-left-radius: 1px;
+  border-top-left-radius: 1px; */
+  border-radius: 2px;
+}
+
+.title:hover,
+.title:focus {
+  color: rgb(223, 25, 120);
+}
+
 section {
   text-align: center;
 }
