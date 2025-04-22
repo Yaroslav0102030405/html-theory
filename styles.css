@@ -1,3 +1,57 @@
+/* Глобальний бордер бокс */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Контейнер */
+.container {
+  width: 1240px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: 2px solid red;
+}
+
+/* особистий Reset CSS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Динамічні зміни */
 :root {
   --title-color: #76d7c4;
   --accent-color: #a66abe;
@@ -19,6 +73,10 @@ body {
 }
 
 .button {
+  display: inline-block;
+  /* display: inline-flex;
+  align-items: center; */
+  min-width: 110px;
   border: none;
   background-color: violet;
   padding: 10px 40px;
@@ -26,6 +84,7 @@ body {
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -33,14 +92,18 @@ button:focus {
   background-color: var(--accent-color);
 }
 
+.link-icon {
+  display: inline-block;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 .current {
   border-bottom: 2px solid var(--accent-color);
   width: 100%;
-  /* border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px; */
-  /* border-radius: 2px; */
-  /* border-bottom-left-radius: 1px;
-  border-top-left-radius: 1px; */
   border-radius: 2px;
 }
 
@@ -49,20 +112,12 @@ button:focus {
   color: rgb(223, 25, 120);
 }
 
-section {
-  text-align: center;
+.im > li:nth-child(2n) {
+  background-color: #a66abe;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-img {
+.center {
   display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .waper {
@@ -132,11 +187,6 @@ td:hover {
   border: 1px solid black;
   opacity: 0;
   transition: opacity 250ms linear;
-}
-
-a {
-  list-style: none;
-  text-decoration: none;
 }
 
 .submenu li {

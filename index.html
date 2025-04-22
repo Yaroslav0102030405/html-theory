@@ -4,30 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML</title>
-    <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <a href=""><img src="" alt="" />photo</a>
+      <div class="container">
+        <nav>
+          <a href=""><img src="" alt="" />photo</a>
 
-        <ul class="nav-list">
-          <li><a class="current" href="./index.html">Головна</a></li>
-          <li><a href="./common.html">Common</a></li>
-          <li><a href="">Контакти</a></li>
-        </ul>
+          <ul class="nav-list">
+            <li><a class="current" href="./index.html">Головна</a></li>
+            <li><a href="./common.html">Common</a></li>
+            <li><a href="">Контакти</a></li>
+          </ul>
 
-        <ul>
-          <li><a href="">login</a></li>
-          <li><a href="">Register</a></li>
-        </ul>
-      </nav>
+          <ul>
+            <li><a href="">login</a></li>
+            <li><a href="">Register</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section>
@@ -80,15 +89,21 @@
       </section>
     </main>
     <section>
-      <h2 class="title">&#169; Привіт!</h2>
-      <!-- Коли ви створюєте силлок іконок і кнопку іконку без тексту то використовують атрібут arіa-label -->
-      <ul>
+      <div class="center">
+        <h2 class="title">&#169; Привіт!</h2>
+        <!-- Коли ви створюєте силлок іконок і кнопку іконку без тексту то використовують атрібут arіa-label -->
+        <!-- <ul>
         <li><a href="" aria-label="facebook link"></a></li>
         <li><a href="" aria-label="instagram link"></a></li>
         <li><a href="" aria-label="youtube link"></a></li>
-      </ul>
+      </ul> -->
 
-      <button class="button">Кнопка</button>
+        <!-- <button class="button">Кнопка</button> -->
+
+        <a class="button" href=""
+          ><span class="link-icon"></span>Натисни на мене</a
+        >
+      </div>
       <!-- <picture>
         <source
           srcset="./images/hero/hero-1600-600-1x.jpg"
@@ -145,26 +160,37 @@
       </nav>
     </section>
 
-    <div class="waper"></div>
+    <!-- <section>
+      <div class="waper"></div>
 
-    <!-- <table class="table">
-      <thead>
-        <tr>
-          <th>ID транзакция</th>
-          <th>Сумма</th>
-          <th>Дата</th>
-          <th>Кто</th>
-          <th>Тип транзакции</th>
-          <th>Имя счета</th>
-          <th>Номер счета</th>
-        </tr>
-      </thead>
-    </table> -->
+      <div class="js-container js-btn-ua">
+        <button class="js-btn-ua button" type="button">EN</button>
+        <button class="js-btn button" type="button">UA</button>
+      </div>
+    </section> -->
 
-    <div class="js-container js-btn-ua">
-      <button class="js-btn-ua button" type="button">EN</button>
-      <button class="js-btn button" type="button">UA</button>
-    </div>
+    <section>
+      <div class="container">
+        <ul class="im">
+          <li>
+            <img src="./images/img-1.jpg" alt="" />
+            <p>fdfdfd</p>
+          </li>
+          <li>
+            <img src="./images/img-1.jpg" alt="" />
+            <p>fdfdfd</p>
+          </li>
+          <li>
+            <img src="./images/img-1.jpg" alt="" />
+            <p>fdfdfd</p>
+          </li>
+          <li>
+            <img src="./images/img-1.jpg" alt="" />
+            <p>fdfdfd</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <!-- <ul class="menu">
       <li class="menu-item">
