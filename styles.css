@@ -366,11 +366,37 @@ td:hover {
   }
 }
 
-.icon {
+/* .icon {
   display: inline-block;
   width: 40px;
   height: 40px;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+} */
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: red;
+  /* fill: #AFB1B8; */
+}
+
+.icon:hover {
+  fill: red;
+}
+
+.link-social {
+  display: inline-flex;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #931414;
+}
+
+.link-social:hover {
+  background-color: #4cbe3b;
 }
