@@ -11,7 +11,7 @@ html {
 
 /* Контейнер */
 .container {
-  width: 1240px;
+  max-width: 1240px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -71,6 +71,67 @@ body {
   line-height: 1.2;
   letter-spacing: -0.015em;
 }
+
+.nav {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  margin-left: 200px;
+}
+
+.nav-list li a {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-left: auto;
+}
+
+/* Динамічна сітка грід */
+/* .im {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+} */
+
+/* Динамічна сітка флекс */
+.im {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.im li {
+  flex: 1 1 300px;
+  /* flex: 1 1 auto; */
+}
+
+/* .im li {
+  max-width: 380px;
+} */
+/* 
+@media (max-width: 768px) {
+  .im {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .im {
+    grid-template-columns: 1fr;
+  }
+} */
 
 .button {
   display: inline-block;
