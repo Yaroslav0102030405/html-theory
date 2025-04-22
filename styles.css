@@ -117,6 +117,47 @@ body {
   /* flex: 1 1 auto; */
 }
 
+.overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-image: url(./images/Img.jpg); */
+  background: linear-gradient(rgba(47, 48, 58, 0.4)), url(./images/Img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.arrow {
+  width: 100px;
+  height: 100px;
+}
+
+.arrow:nth-of-type(1) {
+  background-color: #a66abe;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.arrow:nth-of-type(2) {
+  background-color: #4cbe3b;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.arrow:nth-of-type(3) {
+  background-color: #931414;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 /* .im li {
   max-width: 380px;
 } */
@@ -134,9 +175,9 @@ body {
 } */
 
 .button {
-  display: inline-block;
-  /* display: inline-flex;
-  align-items: center; */
+  /* display: inline-block; */
+  display: inline-flex;
+  align-items: center;
   min-width: 110px;
   border: none;
   background-color: violet;
@@ -162,6 +203,17 @@ button:focus {
   vertical-align: middle;
 }
 
+.button::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  /* background-color: red; */
+  margin-right: 10px;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .current {
   border-bottom: 2px solid var(--accent-color);
   width: 100%;
@@ -175,6 +227,17 @@ button:focus {
 
 .im > li:nth-child(2n) {
   background-color: #a66abe;
+}
+
+.im li::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(./images/arrow.png);
 }
 
 .center {
