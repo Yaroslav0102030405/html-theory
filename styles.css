@@ -189,6 +189,8 @@ body {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-family: inherit;
   cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -406,13 +408,27 @@ td:hover {
 .img-pos {
   display: inline-block;
   position: relative;
+  overflow: hidden;
 }
 
-.img-pos:hover .abs {
-  opacity: 1;
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5252dc;
+  /* overflow: hidden; */
+  transform: translateY(-100%);
+  transition: transform 250ms linear;
 }
 
-.img-pos::after {
+.img-pos:hover .overlay2 {
+  /* opacity: 1; */
+  transform: translateY(0%);
+}
+
+/* .img-pos::before {
   position: absolute;
   content: '';
   top: 0;
@@ -421,22 +437,22 @@ td:hover {
   height: 100%;
   background-color: #6b4646;
   opacity: 0;
-}
 
-.img-pos:hover::after {
+  transform: translateX(-100%);
+  transition: transform 250ms linear;
+} */
+
+/* .img-pos:hover::before {
   opacity: 1;
-}
+  transform: translateX(0%);
+} */
 
 .abs {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* right: 0;
-  bottom: 0; */
-  /* bottom: 0;
-  left: 0; */
-  opacity: 0;
+  /* opacity: 0; */
   z-index: 1;
 }
 
@@ -459,11 +475,19 @@ td:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 166, 0, 0.16);
+
+  opacity: 1;
+
+  transition: opacity 250ms linear;
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.7);
 }
 
 .modal {
@@ -476,6 +500,10 @@ td:hover {
   min-height: 300px;
   padding: 15px;
   background-color: #ffffff;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 250ms linear;
 }
 
 .menu-item2 {
