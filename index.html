@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container">
         <nav class="nav">
           <a href=""><img src="" alt="" />photo</a>
@@ -242,6 +242,61 @@
 </ul>
 
     <a class="button">Швидкий старт</a>
+
+    <article>  
+      <div class="img-pos">
+        <img src="./images/img-1.jpg" alt="">
+        <div class="abs">
+          <img width="40" src="./images/arrow.png" alt="">
+        </div>
+      </div>
+      
+    </article>
+
+    <button class="open-modal">Відкрити</button>
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="close-modal">Закрити</button>
+      </div>
+    </div>
+
+    <ul class="menu2" style="display: flex;">
+      <li class="menu-item2"><a href="">Комплектующі</a></li>
+    <li class="menu-item2"><a class="menu-link2" href="">Послуги</a>
+      <ul class="submenu2">
+        <li><a href="">Пирожки</a></li>
+      <li><a href="">Торти</a></li>
+      <li><a href="">Макфуді</a></li>
+    </ul>
+    </li>
+  </ul>
+  <p>fdfdfdfdfdfdfdfdfdfdfdfdfcvbvbvjhgjhjkhjkjhkhjk</p>
+  
     <script src="./app.js" type="module"></script>
+
+    <script>
+
+      const openeModal = document.querySelector(".open-modal")
+      const closeModal = document.querySelector(".close-modal")
+      const backdrop = document.querySelector(".backdrop")
+
+      openeModal.addEventListener("click", onToggleModal)
+      closeModal.addEventListener("click", onToggleModal)
+      backdrop.addEventListener("click", onBackdrop)
+
+      function onToggleModal(e) {
+        backdrop.classList.toggle("is-hidden")
+      }
+
+      function onBackdrop(e) {
+        if(e.target === e.currentTarget) {
+          onToggleModal()
+        }
+      }
+
+      const {height: pageHeaderHeight} = document.querySelector(".header").getBoundingClientRect()
+
+      document.body.style.paddingTop = `${pageHeaderHeight}`
+    </script>
   </body>
 </html>
