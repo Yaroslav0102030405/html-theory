@@ -501,3 +501,7 @@ td:hover {
 .submenu2 li a:hover {
   color: #5252dc;
 }
+
+textarea {
+  resize: none;
+}

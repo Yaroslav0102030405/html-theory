@@ -271,8 +271,72 @@
     </li>
   </ul>
   <p>fdfdfdfdfdfdfdfdfdfdfdfdfcvbvbvjhgjhjkhjkjhkhjk</p>
+
+  <form action="" autocomplete="off">
+
+    <div class="form-field">
+      <label for="name">Ім'я</label>
+    <input type="text" name="name" id="name" placeholder="Іван">
+    </div> 
+    <div class="form-field">
+      <label for="tell">Телефон</label>
+    <input type="tell" name="tell" id="tell" placeholder="+380_000_00_00">
+    </div>
+    <div class="form-field">
+      <label for="email">Пошта</label>
+    <input type="email" name="email" id="email" placeholder="my@gmail.com">
+    </div>
+    <div class="form-field">
+      <label for="password">Пароль</label>
+    <input type="password" name="password" id="password" placeholder="1$sds#dsd23">
+    </div>
+    
+
+    <div role="group">
+      <h2 class="group-title">Вибір технологій</h2>
+      <ul class="topic-options">
+        <li><input type="checkbox" name="topic" value="html" id="html">
+          <label for="html">HTML</label></li>
+      <li> <input type="checkbox" name="topic" value="css" id="css">
+        <label for="css">CSS</label></li>
+      <li>   <input type="checkbox" name="topic" value="js" id="js">
+        <label for="js">JS</label></li>
+    </ul>
+  </div>
+
+  <div role="group">
+    <h2 class="group-title">Рівень вашого досвіду</h2>
+      <ul class="experience-options">
+        <li><input type="radio" name="experience" value="junior" id="junior">
+        <label for="junior">Junior</label></li>
+      <li><input type="radio" name="experience" value="middle" id="middle">
+        <label for="middle">Middle</label></li>
+      <li> <input type="radio" name="experience" value="senior" id="senior">
+        <label for="senior">Senior</label></li>
+      </ul>
+</div>
+
+<div class="form-field">
+  <label for="comment">Коментарій</label>
+<textarea name="" cols="30" rows="5" id="comment" placeholder="Залишити коментар"></textarea>
+</div>
+<div class="form-field">
+  <input type="checkbox" name="policy" id="policy">
+<label for="policy">Погоджуюсь</label>
+</div>
+
+    <button type="submit" disabled>Відправити</button>
+  </form>
   
     <script src="./app.js" type="module"></script>
+    <script>
+      const form = document.querySelector("form")
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault()
+        e.currentTarget.reset()
+      })
+    </script>
 
     <script>
 
