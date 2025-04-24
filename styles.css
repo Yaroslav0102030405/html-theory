@@ -546,3 +546,37 @@ textarea {
   clip: rect(0 0 0 0);
   overflow: hidden;
 } */
+
+.checkbox {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.icon-policy {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  /* background-color: #931414; */
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.checkbox:checked + .icon-policy {
+  border-color: orange;
+  background-color: orange;
+  background-image: url(./images/Vector.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
