@@ -1,0 +1,9 @@
+@mixin arrow($bg-color) {
+  width: 100px;
+  height: 100px;
+  background-color: $bg-color;
+  background-image: url(../../images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}

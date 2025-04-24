@@ -101,3 +101,10 @@ padding-bottom 120px <br />
 Слова, часто используемые в CSS-классах
 https://blog.ithillel.ua/ru/articles/words-commonly-used-in-css-classes
 https://github.com/yoksel/common-words
+
+sass
+1 паршали фрагменти розбієння по файлам
+2 зміни
+3 вложенність через аперсанта
+4 плейсхолдери шаблони
+5 Міксіми динамічні шаблони налаштовані шаблони
