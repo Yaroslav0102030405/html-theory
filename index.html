@@ -17,13 +17,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <nav class="nav">
-          <a href=""><img src="" alt="" />photo</a>
+          <a href=""><img src="./index.html" alt="" />photo</a>
 
           <ul class="nav-list">
             <li><a class="current" href="./index.html">Головна</a></li>
@@ -243,12 +243,16 @@
 
     <a class="button">Швидкий старт</a>
 
-    <article>  
+    <article class="product">
+      
       <div class="img-pos">
         <img src="./images/img-1.jpg" alt="">
+        
+        <div class="overlay2">
         <div class="abs">
           <img width="40" src="./images/arrow.png" alt="">
         </div>
+      </div> 
       </div>
       
     </article>
@@ -321,7 +325,11 @@
 <textarea name="" cols="30" rows="5" id="comment" placeholder="Залишити коментар"></textarea>
 </div>
 <div class="form-field">
-  <input type="checkbox" name="policy" id="policy">
+  <label for="policy">
+    <input class="checkbox" type="checkbox" name="policy" id="policy">
+    <span class="icon-policy"></span>
+  </label>
+  
 <label for="policy">Погоджуюсь</label>
 </div>
 
