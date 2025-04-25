@@ -21,21 +21,34 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <a href=""><img src="./index.html" alt="" />photo</a>
+      <div class="container flex">
+           <a class="logo" href=""><img src="./index.html" alt="" />photo</a>
 
+        
+               <nav class="nav">
           <ul class="nav-list">
-            <li><a class="current" href="./index.html">Головна</a></li>
-            <li><a href="./common.html">Common</a></li>
-            <li><a href="">Контакти</a></li>
+            <li><a class="link current" href="./index.html">Головна</a></li>
+            <li><a class="link" href="./common.html">Common</a></li>
+            <li><a class="link" href="#contacts">Контакти</a></li>
           </ul>
+
+           <ul class="contacts-2">
+            <li><a href="">login</a></li>
+            <li><a href="">Register</a></li>
+          </ul>
+       </nav>
 
           <ul class="contacts">
             <li><a href="">login</a></li>
             <li><a href="">Register</a></li>
           </ul>
-        </nav>
+
+           <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+               </div>
+      
       </div>
     </header>
     <main>
@@ -290,10 +303,10 @@
       <label for="email">Пошта</label>
     <input type="email" name="email" id="email" placeholder="my@gmail.com">
     </div>
-    <div class="form-field">
+    <!-- <div class="form-field">
       <label for="password">Пароль</label>
     <input type="password" name="password" id="password" placeholder="1$sds#dsd23">
-    </div>
+    </div> -->
     
 
     <div role="group">
@@ -335,6 +348,8 @@
 
     <button type="submit" disabled>Відправити</button>
   </form>
+
+  <section id="contacts"></section>
   
     <script src="./app.js" type="module"></script>
     <script>
@@ -358,6 +373,7 @@
 
       function onToggleModal(e) {
         backdrop.classList.toggle("is-hidden")
+        document.body.classList.toggle("lock")
       }
 
       function onBackdrop(e) {
@@ -369,6 +385,29 @@
       const {height: pageHeaderHeight} = document.querySelector(".header").getBoundingClientRect()
 
       document.body.style.paddingTop = `${pageHeaderHeight}`
+    </script>
+
+    <script>
+      const menu = document.querySelector(".nav")
+      const icon =  document.querySelector(".menu-icon")
+
+      const body = document.body
+
+      if(menu && icon) {
+        icon.addEventListener("click", function() {
+          menu.classList.toggle("active")
+          icon.classList.toggle("active")
+          body.classList.toggle("lock")
+        })
+      }
+
+      menu.querySelectorAll(".link").forEach(link => {
+        link.addEventListener("click", function() {
+          menu.classList.remove("active")
+          icon.classList.remove("active")
+          body.classList.remove("lock")
+        })
+      })
     </script>
   </body>
 </html>
