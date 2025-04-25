@@ -615,3 +615,10 @@ textarea {
 .logo {
   padding: 20px;
 }
+
+// фонові зображення
+.bg-images {
+  background-image: image-set(
+    './images/360.jpeg 1x, ./images/680.jpeg 2x, ./images/960.jpeg 3x'
+  );
+}
