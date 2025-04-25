@@ -349,7 +349,58 @@
     <button type="submit" disabled>Відправити</button>
   </form>
 
-  <section id="contacts"></section>
+  <section id="contacts">
+    <h2>Привіт!</h2>
+    <!-- одне зображення в різних розмірах -->
+    <!-- Адаптівне фото -->
+     <!-- браузер враховую тільки плотність пікселей екрану -->
+    <img 
+    srcset="./images/360.jpeg 1x, 
+    ./images/680.jpeg 2x, 
+    ./images/960.jpeg 3x "
+    src="./images/360.jpeg" 
+    width="320" alt="">
+
+
+     <!-- одне зображення в різних розмірах -->
+    <!-- чутливе зображення -->
+     <!-- Плотность пікселей і враховує ширину вьюпорта -->
+      <!-- брайзер сам буде підбирате фото -->
+      <img
+    srcset="./images/360.jpeg 360w, 
+    ./images/680.jpeg 680w, 
+    ./images/960.jpeg 960w "
+    src="./images/360.jpeg"
+    sizes="(min-width: 800px) 25vw, (min-width: 500px) 50vw, 100vw"
+   alt="Ноутбук">
+
+   <!-- чутливі фонові зображення -->
+
+   <!-- тег пікчер позволяє заргужати зображення в різних форматах 
+    і різні зображення під різний розмір вьюпорта -->
+    <picture>
+      <source 
+      srcset="./images/360.jpeg 360w, 
+    ./images/680.jpeg 680w, 
+    ./images/960.jpeg 960w" 
+    type="image/jpeg">
+
+      <img 
+      srcset="./images/360.webp 360w, 
+    ./images/680.webp 680w, 
+    ./images/960.webp 960w" 
+      src="./images/360.jpeg" alt="">
+    </picture>
+
+    <picture>
+       <source srcset="./images/desc.jpeg" media="(min-width: 1200px)">
+        <source srcset="./images/tab.jpeg" media="(min-width: 481px)">
+      <source srcset="./images/mob.jpeg" media="(max-width: 480px)">
+     
+     
+      <img src="./images/desc.jpeg" alt="">
+    </picture>
+  </section>
   
     <script src="./app.js" type="module"></script>
     <script>
