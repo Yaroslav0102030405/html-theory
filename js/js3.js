@@ -128,3 +128,74 @@ const cardToUpdate = 'Карточка-4';
 const ind = cards.indexOf(cardToUpdate);
 cards.splice(ind, 1, 'Обновленная карточка 4');
 console.log(cards);
+
+// функція використовується для перевикористання коду
+
+// параметри це те що функцію об'явили як локальні зміни
+// аргумент це значення для параметрів під час виклику
+
+const card4 = [1, 2, 3, 4, 5];
+
+const totalPrice = (items) => {
+  let total = 0;
+  for (const item of items) {
+    total += item;
+  }
+  return total;
+};
+
+console.log(totalPrice(card4));
+console.log(totalPrice([5, 6, 7]));
+
+const logins2 = ['a', 'b', 'c'];
+const loginToFind2 = 'c';
+
+const findLogin = (logins, loginToFind) => {
+  return logins.includes(loginToFind)
+    ? `Користувач ${loginToFind} знайден`
+    : `Користувач ${loginToFind} не знайден`;
+};
+
+console.log(findLogin(logins2, loginToFind2));
+console.log(findLogin(['g', 'e'], 'e'));
+
+const numbers2 = [7, 6, 5, 4, 3, 2, 1];
+
+const findSmallNumber = (numbers) => {
+  let smallesNumbers = numbers[0];
+
+  for (const number of numbers) {
+    if (number < smallesNumbers) {
+      smallesNumbers = number;
+    }
+  }
+
+  return smallesNumbers;
+};
+
+console.log(findSmallNumber(numbers2));
+
+// ...имя - операція рест -остаток
+const fn = (...args) => {
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg;
+  }
+  return total;
+};
+console.log(fn(10, 20));
+
+const filteredNumbers = (array, ...args) => {
+  const uniqueElement = [];
+
+  for (const arr of array) {
+    if (args.includes(arr)) {
+      console.log(`${arr} есть везде`);
+      uniqueElement.push(arr);
+    }
+  }
+  return uniqueElement;
+};
+
+console.log(filteredNumbers([1, 2, 3, 4, 5], 1, 3, 6, 7));
