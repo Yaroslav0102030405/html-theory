@@ -123,4 +123,46 @@ const s = {
   c: 3,
 };
 
+// spread - бере колекцію та зробить її на окреми елементи
+
 console.log(Object.keys(s).length);
+
+const lastWeekTemps = [1, 2, 3];
+const currentTemps = [4, 5, 6];
+const nextWeekTemps = [7, 8, 9];
+
+const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps];
+console.log(allTemps);
+
+const defaultSettings = {
+  theme: 'light',
+  showNotifications: true,
+  hideSidebar: false,
+};
+
+const userSettings = {
+  showNotifications: false,
+  hideSidebar: true,
+};
+
+const finalSettings = {
+  ...defaultSettings,
+  ...userSettings,
+};
+
+console.log(finalSettings);
+
+const playlist2 = {
+  name: 'Мщй супер плейлист',
+  rating: 5,
+  tracks: ['трек-1', 'трек-2'],
+  trackCount: 1,
+};
+
+const { name, rating, tracks, trackCount } = playlist;
+console.log(name);
+
+const rgb = [255, 100, 200];
+
+const [red, , blue] = rgb;
+console.log(red, blue);
