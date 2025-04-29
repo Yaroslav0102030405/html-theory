@@ -166,3 +166,107 @@ const rgb = [255, 100, 200];
 
 const [red, , blue] = rgb;
 console.log(red, blue);
+
+const doMatch = (a, b, callback) => {
+  const result = callback(a, b);
+  console.log(result);
+};
+
+const add = (x, y) => {
+  return x + y;
+};
+
+const sub = (x, y) => {
+  return x - y;
+};
+
+doMatch(2, 3, add);
+doMatch(20, 10, sub);
+
+// Функція фільтр
+
+const filter = (array, callback) => {
+  const filteredArray = [];
+
+  for (const ar of array) {
+    const passed = callback(ar);
+
+    if (passed) {
+      filteredArray.push(ar);
+    }
+  }
+  return filteredArray;
+};
+
+const callback1 = (value) => {
+  return value > 3;
+};
+
+console.log(filter([1, 2, 3, 4, 5], callback1));
+console.log(filter([5, 6, , 7, 8], callback1));
+
+const fruits = [
+  { name: 'apples', quantity: 200, isFresh: true },
+  { name: 'grapes', quantity: 100, isFresh: true },
+  { name: 'bananes', quantity: 300, isFresh: true },
+];
+
+const getFryitsQuantity = (fruit) => {
+  return fruit.quantity > 100;
+};
+
+console.log(filter(fruits, getFryitsQuantity));
+
+// замикання — це здатність функції пам'ятати та мати доступ до змінних
+// зі своєї лексичної області видимості
+// (тобто області видимості, де функція була оголошена),
+// навіть після того, як зовнішня функція,
+// в якій вона була оголошена, завершила своє виконання.
+
+// замикання - функцію, яка оголошена всередині іншої функції.
+// Внутрішня функція має доступ до змінних зовнішньої функції,
+// навіть після того, як зовнішня функція вже завершила своє виконання.
+// Ось ця "пам'ять" внутрішньої функції
+// про змінні зовнішньої області видимості і називається замиканням.
+
+// використовується щоб створювати приватні змінні та методи
+// Збереження стану між викликами функцій
+
+const makeSheff = (name) => {
+  const makeDish = function (dish) {
+    console.log(`${name} готує ${dish}`);
+  };
+
+  return makeDish;
+};
+
+const mango = makeSheff('Mango');
+const kiwi = makeSheff('Kiwi');
+
+mango('котлети');
+kiwi('пироги');
+console.dir(mango);
+
+const myLibFactory = () => {
+  let value = 0;
+
+  const add = function (number) {
+    value += number;
+  };
+
+  return {
+    add,
+    getValue() {
+      return value;
+    },
+  };
+};
+
+const myLib = myLibFactory();
+
+myLib.add(10);
+
+console.dir(myLib.getValue);
+
+// В стрілочних функціях не має свого аргумент зміної та this
+// В стрілочних функція діз запам'ятовую контекст при об'яві (контект сроліки не можливо змінити)
