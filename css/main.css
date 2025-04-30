@@ -626,4 +626,8 @@ textarea {
 .bg-images {
   background-image: -webkit-image-set("./images/360.jpeg 1x, ./images/680.jpeg 2x, ./images/960.jpeg 3x");
   background-image: image-set("./images/360.jpeg 1x, ./images/680.jpeg 2x, ./images/960.jpeg 3x");
+}
+
+.cool {
+  color: orange;
 }/*# sourceMappingURL=main.css.map */
