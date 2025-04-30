@@ -66,7 +66,7 @@ console.log(salary);
 // console.log(res1);
 // alert(res1);
 
-const colors = ['red', 'black', 'orange'];
+const colors = ['red', 'orange'];
 const max = colors.length - 1;
 const min = 0;
 
