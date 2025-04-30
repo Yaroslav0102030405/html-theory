@@ -138,3 +138,92 @@ const total = numbers.reduce((acc, number) => {
   return acc + number;
 }, 0);
 console.log(total);
+
+const salary = {
+  a: 10,
+  b: 20,
+  c: 30,
+};
+
+const totalSalary = Object.values(salary).reduce((total, value) => {
+  return total + value;
+}, 0);
+console.log(totalSalary);
+
+const totalPointsPlayer = players.reduce(
+  (totalPoint, player) => totalPoint + player.points,
+  0
+);
+console.log(totalPointsPlayer);
+
+const cards = [
+  { price: 10, quantity: 1 },
+  { price: 20, quantity: 1 },
+  { price: 30, quantity: 2 },
+];
+
+const totalAmout = cards.reduce((total, card) => {
+  return total + card.price * card.quantity;
+}, 0);
+console.log(totalAmout);
+
+const tweets = [
+  { tags: ['js', 'node'] },
+  { tags: ['css', 'node'] },
+  { tags: ['css', 'js'] },
+];
+
+const allTags = tweets.reduce((tags, tweet) => {
+  // tags.push(...tweet.tags);
+
+  return [...tags, ...tweet.tags];
+}, []);
+console.log(allTags);
+
+const tagsStats = allTags.reduce((acc, tag) => {
+  return { ...acc, [tag]: acc[tag] ? acc[tag] + 1 : 1 };
+}, {});
+console.log(tagsStats);
+
+// sort - змінює оригіналлний масив сортирує по возрастанню сортирує по юнікоду
+const num = [9, 8, 7, 6, 5];
+const sortNumber = num.sort();
+console.log(sortNumber);
+
+const ab = num.sort((currentEl, nextEl) => {
+  return currentEl - nextEl;
+});
+console.log(ab);
+
+// Як зробити копію масиву є 2 методи slice() і операції ...spread
+const copy = [...num].sort((a, b) => a - b);
+console.log(copy);
+
+const sortedPlayer = [...players].sort((currrentPlayer, nextPlayer) => {
+  return nextPlayer.points - currrentPlayer.points;
+});
+console.log(sortedPlayer);
+
+const byName = [...players].sort((currentPlayer, nextPlayer) => {
+  const result = currentPlayer.name[0] > nextPlayer.name[0];
+
+  if (result) {
+    return 1;
+  }
+
+  return -1;
+});
+console.log(byName);
+
+const n = [1, 4, 3, 6, 2, 5];
+
+const sorted = [...n]
+  .filter((n) => n > 3)
+  .map((n) => n * 2)
+  .sort((a, b) => b - a);
+console.log(sorted);
+
+const playerOnlineAndSort = players
+  .filter((player) => player.online)
+  .sort((a, b) => b.points - a.points);
+console.log(playerOnlineAndSort);
