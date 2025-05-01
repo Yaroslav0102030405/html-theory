@@ -630,4 +630,41 @@ textarea {
 
 .cool {
   color: orange;
+}
+
+.backdrop-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 166, 0, 0.16);
+  opacity: 1;
+  transition: opacity 250ms linear;
+}
+
+.backdrop-1.is-hidden-1 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop-1.is-hidden-1 .modal-1 {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.modal-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  min-height: 300px;
+  padding: 15px;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms linear;
+}
+
+body.show-modal-1 {
+  overflow: hidden;
 }/*# sourceMappingURL=profile.css.map */
