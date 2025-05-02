@@ -463,6 +463,23 @@
       <button class="btn-2" type="button">Закрити</button>
     </div>
   </div>
+
+  <div class="js-container-1">
+    <button>Кнопка 1</button>
+     <button>Кнопка 2</button>
+      <button>Кнопка 3</button>
+       <button>Кнопка 4</button>
+        <button>Кнопка 5</button>
+  </div>
+
+  <ul class="js-tags-1">
+    <li><button class="tags-btn-12" data-value="html">#html</button></li>
+  <li><button class="tags-btn-12" data-value="css">#css</button></li>
+  <li><button class="tags-btn-12" data-value="js">#js</button></li>
+</ul>
+
+<ul class="palette js-palette-container">
+</ul>
   
 >>>>>>> dev
     <script src="./app.js" type="module"></script>
@@ -480,6 +497,7 @@
       const closeModal = document.querySelector('.close-modal');
       const backdrop = document.querySelector('.backdrop');
 
+<<<<<<< HEAD
       openeModal.addEventListener('click', onToggleModal);
       closeModal.addEventListener('click', onToggleModal);
       backdrop.addEventListener('click', onBackdrop);
@@ -492,6 +510,26 @@
       function onBackdrop(e) {
         if (e.target === e.currentTarget) {
           onToggleModal();
+=======
+      const openeModal = document.querySelector(".open-modal")
+      const closeModal = document.querySelector(".close-modal")
+      const backdrop = document.querySelector(".backdrop")
+
+      openeModal.addEventListener("click", onToggleModal, true)
+      closeModal.addEventListener("click", onToggleModal, true)
+      backdrop.addEventListener("click", onBackdrop, true)
+
+      function onToggleModal(e) {
+        backdrop.classList.toggle("is-hidden")
+        document.body.classList.toggle("lock")
+        e.stopPropagation()
+      }
+
+      function onBackdrop(e) {
+        if(e.target === e.currentTarget) {
+          onToggleModal()
+           e.stopPropagation()
+>>>>>>> dev
         }
       }
 
@@ -508,6 +546,7 @@
 
       const body = document.body;
 
+<<<<<<< HEAD
       if (menu && icon) {
         icon.addEventListener('click', function () {
           menu.classList.toggle('active');
@@ -523,6 +562,23 @@
           body.classList.remove('lock');
         });
       });
+=======
+      if(menu && icon) {
+        icon.addEventListener("click", function() {
+          menu.classList.toggle("active")
+          icon.classList.toggle("active")
+          body.classList.toggle("lock")
+        }, true)
+      }
+
+      menu.querySelectorAll(".link").forEach(link => {
+        link.addEventListener("click", function() {
+          menu.classList.remove("active")
+          icon.classList.remove("active")
+          body.classList.remove("lock")
+        }, true)
+      })
+>>>>>>> dev
     </script>
 
     <script src="./js/js-1.js" type="module"></script>
@@ -532,5 +588,6 @@
     <script src="./js/js-9.js" type="module"></script>
     <script src="./js/js-13.js" type="module"></script>
     <script src="./js/js-14.js" type="module"></script>
+    <script src="./js/js-15.js" type="module"></script>
   </body>
 </html>
