@@ -215,7 +215,7 @@ body.lock {
 } */
 .button:hover,
 button:focus {
-  background-color: #a66abe;
+  background-color: #6bac21;
 }
 
 .link-icon {
@@ -239,7 +239,7 @@ button:focus {
 }
 
 .current {
-  border-bottom: 2px solid #a66abe;
+  border-bottom: 2px solid #6bac21;
   width: 100%;
   border-radius: 2px;
 }
@@ -668,4 +668,38 @@ textarea {
 
 body.show-modal-1 {
   overflow: hidden;
+}
+
+.active-red {
+  background-color: red;
+}
+
+.palette {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(217px, 1fr));
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.color-card {
+  display: grid;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.color-card.is-active {
+  transform: perspective(400px) rotateX(10deg);
+}
+
+.c1 {
+  width: 100%;
+  height: 150px;
+}
+
+.color-swatch {
+  height: 120px;
+  padding: 5px;
+  border-radius: 4px;
 }/*# sourceMappingURL=profile.css.map */
