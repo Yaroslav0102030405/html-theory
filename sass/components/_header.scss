@@ -700,3 +700,19 @@ body.show-modal-1 {
   padding: 5px;
   border-radius: 4px;
 }
+
+.card {
+  text-align: center;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
